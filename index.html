@@ -110,12 +110,13 @@
 <!-- Here to help section -->
 <div class="here-to-help-section">
 
-    <div><img src="/assets/here-to-help-bg.jpg"></div>
-    <h1>Got Questions? We've Got Answers!</h1>
+    <h1>GOT QUESTIONS? WE'RE HERE TO ANSWER!</h1>
     <p>If anything about our dental services is unclear,
     or you just want to learn more, we're ready to 
     provide the information you need.
  </p>
+
+ <button>Contact Us</button>
 </div>
 
 
@@ -306,8 +307,7 @@ html, body {
     .about-us-section {
         img {
             display: flex;
-            margin-top: 100px;
-            margin-left: 50px;
+            margin:100px auto 0 auto;
             width:250px;
             height: auto;
         }
@@ -319,8 +319,6 @@ html, body {
             color: #ffffff;
             padding: 10px 20px;
             text-align: center;
-            text-decoration: none;
-            display: flex;
             font-size: 16px;
             margin-top: 20px;
             margin-left: 150px;
@@ -390,33 +388,61 @@ html, body {
 
 
 .here-to-help-section {
-    width:100%;
-    
-    align-items: center;
+  display: flex;
+    flex-direction: column;
     justify-content: center;
+  align-items: center;
+    width:100%;
+    text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:#000000;
+    color:#cccccc;
+    background-image: url("/assets/here-to-help-bg.jpg");
+    background-size: cover;
+    min-height: 400px;
     h1{
-        display: flex;
-        justify-content: center;
+      width:60%;
         line-height: normal;
         font-size: 50px;
         margin-bottom: 10px;
     }
     p {
-        display: flex;
         font-size: 24px;
-        width:80%;
-        
+        width:40%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    
+    button{
+        display: flex;
+        background-color: #75c3d6;
+        border: 2px solid #75c3d6;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        margin-top: 0px;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #042f47;
+            color: #ffffff;
+            border: 2px solid #042f47;
+        }
     }
 
+    @media (max-width: 992px){
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;
+            h1{
+              font-size: 36px;
+            }
+            p{
+              font-size: 24px;
+            }
 
-    img {
-        user-select: none;
-        z-index: 0;
-        opacity: 0;
-    }
-
+        }
 }
 
 
