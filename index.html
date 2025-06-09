@@ -77,14 +77,14 @@
 
     <div class="our-practice"> 
         <h1>Your Dental Care Team</h1>
-        Led by Dr. Danvy Tran, our commitment is to deliver exceptional, 
+        <p>Led by Dr. Danvy Tran, our commitment is to deliver exceptional, 
         patient-focused dentistry. 
         We aim to make your experience positive from the start, with a 
         staff dedicated to making you feel at home. 
         Understanding that each patient has distinct dental requirements, 
         we pride ourselves on crafting individual treatment plans that truly fit. <br><br>
 
-        We believe in personalized care, knowing that every patient's needs are unique. 
+        We believe in personalized care, knowing that every patient's needs are unique. </p>
 
     </div>
         <div class="about-us-section"><img src="/assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo"> </a> 
@@ -106,6 +106,18 @@
 </div>
 <!-- spacer between sections -->
 <div class="spacer" style="height: 100px;"></div>
+
+<!-- Here to help section -->
+<div class="here-to-help-section">
+
+    <div><img src="/assets/here-to-help-bg.jpg"></div>
+    <h1>Got Questions? We've Got Answers!</h1>
+    <p>If anything about our dental services is unclear,
+    or you just want to learn more, we're ready to 
+    provide the information you need.
+ </p>
+</div>
+
 
 
 
@@ -375,6 +387,38 @@ html, body {
         }
     }
 }
+
+
+.here-to-help-section {
+    width:100%;
+    
+    align-items: center;
+    justify-content: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#000000;
+    h1{
+        display: flex;
+        justify-content: center;
+        line-height: normal;
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    p {
+        display: flex;
+        font-size: 24px;
+        width:80%;
+        
+    }
+
+
+    img {
+        user-select: none;
+        z-index: 0;
+        opacity: 0;
+    }
+
+}
+
 
     </style>
 </html>
