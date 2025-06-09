@@ -6,13 +6,20 @@
     <title>Chonky Dental Care</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/styles.css"> <!--this line links to the CSS file-->
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<!--Nav Bar-->
+
+<!--Gradient background-->
+    <div class="gradient-background">
+        <img src="/assets/whitedottedgradient.jpg">
+    </div>
+
+    <!--Nav Bar-->
     <nav class = "navbar">
     <a href="/" class="logo"><img src="/assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo"> </a> 
-
         <ul>
             <li><a href="">Home</a></li>
 
@@ -62,17 +69,46 @@
   </div>
 
 </div>
+<!-- overlay text positioned on top of image carousel -->
 <div class="welcome-text">YOUR MANASSASS FAMILY DENTIST</div>
 
-    <main>
-        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae nam, saepe nihil ut harum excepturi minima temporibus! Ducimus debitis, nemo architecto nostrum delectus sint ea eius omnis, aliquam, veniam sequi.
-    Lorem ipsum dolo
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit saepe omnis numquam consequuntur. In repudiandae natus totam ad perferendis sit similique, voluptas illo, optio ex iusto consequatur magni vitae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit saepe omnis numquam consequuntur. In repudiandae natus totam ad perferendis sit similique, voluptas illo, optio ex iusto consequatur magni vitae!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat fugit saepe omnis numquam consequuntur. In repudiandae natus totam ad perferendis sit similique, voluptas illo, optio ex iusto consequatur magni vitae! Lorem ipsum dolo
-    
-    r sit amet, consectetur adipisicing elit. Ab assumenda laudantium perspiciatis alias odio a ea. Suscipit voluptatum ipsam dicta facere porro officia nobis id itaque nulla, alias earum fugit.
-    </h1>
-      </main>
+<!-- first main "about us" section -->
+<div class ="main-content-container-1">
+
+    <div class="our-practice"> 
+        <h1>Your Dental Care Team</h1>
+        Led by Dr. Danvy Tran, our commitment is to deliver exceptional, 
+        patient-focused dentistry. 
+        We aim to make your experience positive from the start, with a 
+        staff dedicated to making you feel at home. 
+        Understanding that each patient has distinct dental requirements, 
+        we pride ourselves on crafting individual treatment plans that truly fit. <br><br>
+
+        We believe in personalized care, knowing that every patient's needs are unique. 
+
+    </div>
+        <div class="about-us-section"><img src="/assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo"> </a> 
+        <button>About Us</button>
+        </div>
+
+
+    <div class="customer-expectations">
+        <h1>Our Commitment to You</h1>
+        As our patient, your comfort and understanding are our top priorities. We guarantee:
+
+        <ul>
+            <li>You'll always be met with respect and personalized attention.</li>
+            <li>Timely appointments, respecting your schedule.</li>
+            <li>Comprehensive explanations for all aspects of your care. </li>
+            <li>A consistently comfortable experience throughout your time with us.</li>
+        </ul>
+    </div>
+</div>
+<!-- spacer between sections -->
+<div class="spacer" style="height: 100px;"></div>
+
+
+
 </body>
 
 
@@ -88,27 +124,38 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    background:#8b8b8b ;
-    background: radial-gradient(circle, #6d6d6d 0%, #ffffff 100%);
+}
+
+.gradient-background img {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.7;
 }
 
 .navbar{
-    height:100px;
+    height:130px;
     width: 100%;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
     justify-content: space-between;
-    z-index: 100;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.8); 
 }
 
 .navbar .logo img{
-    height: 100px;
-    width: 100px;
-    margin-left: 80px; 
-    margin-top: 60px;
-    border-radius: 50%;
+    height: auto;
+    width: 200px;
+    margin-left: 20px; 
+    margin-top: 0px;
+
+    @media (max-width: 992px){
+        width: 110px;
+        margin-left: 20px; 
     }
+}
 
 .navbar ul{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -120,7 +167,7 @@ html, body {
 }
 .navbar ul li {
     position: relative;
-    padding: 10px 30px;
+    padding: 10px 10px;
     font-size: 24px;
 }
 
@@ -132,10 +179,8 @@ html, body {
     position: absolute;
     z-index: 1000;
     transform: translate(-50%, -50%);
-    top: 75%;
-    left: 50%;
-    margin-left: -220px;
-    margin-top: -250px;
+    top: 55vh;
+    left: 45vw;
     text-align: left;
     font-size: 100px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -205,7 +250,7 @@ html, body {
           width: 100%;
           height: 90vh;
           display: flex;
-          animation: imageslideranimation 20s infinite alternate;
+          animation: imageslideranimation 12s infinite alternate ease-in-out;
           img {
             width: calc(100% / 3);
             height: 100%;
@@ -216,11 +261,120 @@ html, body {
       }
 
       @keyframes imageslideranimation {
-        0% { transform: translateX(0); }
-        33.33% { transform: translateX(0); }
-        66.66% { transform: translateX(-33.33%); }
+         0% { transform: translateX(0); }
+        15% { transform: translateX(0); }
+        30% { transform: translateX(-33.33%); }
+        50% { transform: translateX(-33.33%); }
+        65% { transform: translateX(-33.33%); } 
+        85% { transform: translateX(-66.66%); } 
         100% { transform: translateX(-66.66%); }
 
       }
+
+.main-content-container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1600px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Roboto', sans-serif;
+    font-size: 16px;
+    color:#062333;
+
+    @media (max-width: 992px){
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .about-us-section {
+        img {
+            display: flex;
+            margin-top: 100px;
+            margin-left: 50px;
+            width:250px;
+            height: auto;
+        }
+
+        button{
+            display: flex;
+            background-color: #75c3d6;
+            border: 2px solid #75c3d6;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-left: 150px;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: #042030;
+                color: #ffffff;
+                border: 2px solid #042f47;
+            }
+        }
+    }
+
+    .our-practice {
+        line-height: 35px;
+        font-weight: normal;
+        width: 32%;
+        text-align: left;
+        h1{
+        line-height: normal;
+        font-size: 50px;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color:#042f47;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 992px){
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+            padding-bottom: 10px;
+        }
+    }
+
+    .customer-expectations {
+        line-height: 35px;
+        width: 35%;  
+
+            h1{
+                line-height: normal;
+                font-size: 50px;
+                font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color:#042f47;
+                margin-bottom: 10px;
+
+            }
+        ul {
+            padding-left: 30px;
+            text-align:left;
+            li::marker {
+                transform: translate(0,10px);
+             font-size: 0.8rem;
+             vertical-align: middle;
+            }
+        }
+
+    @media (max-width: 992px){
+            margin-left: auto;
+            margin-right: auto;
+            width: 85%;
+            padding-bottom: 10px;
+
+        }
+    }
+}
+
     </style>
 </html>
