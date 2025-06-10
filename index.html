@@ -108,6 +108,7 @@
 <div class="spacer" style="height: 100px;"></div>
 
 <!-- Here to help section -->
+ <div class="overlap-container">
 <div class="here-to-help-section">
 
     <h1>GOT QUESTIONS? WE'RE HERE TO ANSWER!</h1>
@@ -119,6 +120,47 @@
  <button>Contact Us</button>
 </div>
 
+<!--Coupon block-->
+
+<section id="coupons">
+    <div class="coupon-item-special">
+        <span>$100</span>
+        <p>New Patient Special</p> </div>
+    <div class="coupon-item-free">
+        <span>FREE</span>
+        <p>Dental Implants Consultation</p> </div>
+</section>
+</div>
+
+
+<!-- business overview section (learn more) -->
+ <div class="business-overview-section-container">
+ <div class="business-overview-section">
+    <h1>Nurturing Healthy Smiles, Today and Tomorrow</h1>
+    <p>Your oral health is at the heart of everything we do 
+        at iCare Family Dentistry. We're committed to a 
+        personalized approach, carefully evaluating your 
+        current dental needs and guiding you toward a future 
+        of lasting oral wellness. <br><br>
+
+        Explore our special offers and see how we can help 
+        you smile brighter!</p>
+        <button>Learn More</button>
+
+    </div>
+
+</div>
+
+<!-- service overview section -->
+ <div class="service-overview-section-container">
+    <div class="service-overview-section">
+
+        <div class="Family-Dentistry">Family Dentistry</div>
+        <div class="Cosmetic-Dentistry">Cosmetic Dentistry</div>
+        <div class="Orthodontics">Orthodontics</div> 
+        <div class="Dental-Implants">Dental Implants</div>
+    </div>
+</div>
 
 
 
@@ -395,7 +437,7 @@ html, body {
     width:100%;
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:#cccccc;
+    color:#ffffff;
     background-image: url("/assets/here-to-help-bg.jpg");
     background-size: cover;
     min-height: 400px;
@@ -443,6 +485,181 @@ html, body {
             }
 
         }
+}
+
+.overlap-container {
+    position: relative;
+    width: 100%;
+}
+section#coupons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap:100px;
+    position:absolute;
+    top:200px;
+    z-index: 10;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.coupon-item-special {
+    width:300px;
+    padding-top: 20px;
+    background-image: url("/assets/bluegradient.png");
+    background-size: cover;
+    height: 150px;
+    span{
+            
+            display: block;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+    p{
+        font-size: 30px;
+        color: #ffffff;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+}
+.coupon-item-free {
+    width:330px;
+    background-image: url("/assets/bluegradient.png");
+    background-size: cover;
+    height: 150px;
+    padding-top: 20px;
+
+        span{   
+                display: block;
+                text-align: center;
+                font-size: 50px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+        p{
+            font-size: 30px;
+            color: #ffffff;
+            margin: 0;
+            padding: 0px;
+        }
+}
+
+.business-overview-section-container {
+    margin-top:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.business-overview-section {
+    display: block;
+    align-items: center;
+    color: #042f47;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    h1{
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+p{
+    font-size: 24px;
+    width:40%;
+    margin: 0 auto;
+    text-align: center;
+}
+    button{
+        margin-top:40px;
+        margin-bottom:80px;
+        background-color: #75c3d6;
+        border: 2px solid #75c3d6;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #042f47;
+            color: #ffffff;
+            border: 2px solid #042f47;
+        }
+        
+    }
+
+}
+
+.service-overview-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    width:100%;
+}
+
+.Family-Dentistry {
+    background-image: url("/assets/dentalpatient1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #042f47;
+    font-weight: bold;
+    text-align: center;
+}
+.Cosmetic-Dentistry {
+    background-image: url("/assets/dentalpatient2.jpg");
+   background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #042f47;
+    font-weight: bold;
+    text-align: center;
+}
+.Orthodontics {
+    background-image: url("/assets/dentalpatient3.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #042f47;
+    font-weight: bold;
+    text-align: center;
+}
+.Dental-Implants {
+    background-image: url("/assets/dentalpatient4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 350px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #042f47;
+    font-weight: bold;
+    text-align: center;
 }
 
 
