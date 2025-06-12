@@ -215,46 +215,67 @@
       opacity: 0.7;
   }
   
-  .navbar{
-      height: 8rem; /* Adjusted from 130px */
-      width: 100%;
-      display: flex;
-      align-items: center;
-      position: fixed;
-      justify-content: space-between;
-      z-index: 9999;
-      background: rgba(255, 255, 255, 0.8);
+  .navbar {
+    height: 8rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0; /* Ensures the navbar is fixed to the very top */
+    left: 0; /* Ensures the navbar is fixed to the very left */
+    justify-content: space-between;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.8);
   }
   
   .navbar .logo img{
       height: auto;
-      width: 12.5rem; /* Adjusted from 200px */
-      margin-left: 1.25rem; /* Adjusted from 20px */
-      margin-top: 0;
+      width: 14rem; 
+      margin-left: 1.25rem; 
   
-      @media (max-width: 62rem){ /* Adjusted from 992px */
-          width: 6.875rem; /* Adjusted from 110px */
-          margin-left: 1.25rem; /* Adjusted from 20px */
+      @media (max-width: 62rem){ 
+          width: 6.875rem; 
+          margin-left: 1.25rem;
       }
   }
   
-  .navbar ul{
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      list-style-type: none;
-      display:flex;
-      text-align: center;
-      justify-content: space-between;
-      padding: 0.625rem; /* Adjusted from 10px */
-  }
-  .navbar ul li {
-      position: relative;
-      padding: 0.625rem 0.625rem; /* Adjusted from 10px */
-      font-size: 1.5rem; /* Adjusted from 24px */
-  }
+  .navbar ul {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 700;
+    list-style-type: none;
+    display:flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0.625rem;
+    flex-wrap: wrap; 
+}
+ .navbar ul li {
+    position: relative;
+    padding: 0.625rem 0.625rem;
+    font-size: 1.5rem; 
+}
   
   .navbar ul li.dropdown-nav-item {
       position: relative;
   }
+  @media (max-width: 60rem) { /* Adjust breakpoint as needed for when text starts to overlap */
+    .navbar ul li {
+        font-size: 1.2rem; /* Slightly smaller font size for tablets/smaller desktops */
+        padding: 0.5rem 0.4rem; /* Reduce padding to save space */
+    }
+}
+
+@media (max-width: 60rem) { /* Example: Mobile breakpoint for nav items */
+    .navbar ul {
+        /* You might want to switch to a hamburger menu setup here */
+        /* For now, just making items smaller to prevent overflow */
+        padding: 0.3rem; 
+    }
+    .navbar ul li {
+        font-size: 1rem; /* Even smaller font size for mobile */
+        padding: 0.3rem 0.2rem; /* Further reduce padding */
+    }
+}
   
   .welcome-text {
       position: absolute;
@@ -786,16 +807,15 @@
     #Dr-Danvy-Tran .bio-content {
         width: 65%; /* Or adjust percentage as desired */
         flex-shrink: 1; /* Allows the text block to shrink if needed */
-        /* ... other styles like font-size, color, line-height, text-align ... */
     }
 
     #Dr-Danvy-Tran .bio-headshot-container {
-        display: flex; /* Makes this container a flex container to align the image inside */
-        justify-content: flex-end; /* Aligns the image to the right within its 30% width */
-        align-items: flex-start; /* Aligns the image to the top of its container */
-        flex-shrink: 0; /* PREVENT the image container from shrinking */
-        width: 30%; /* Or adjust percentage/fixed px as desired */
-        max-width: 350px; /* Optional: Sets a maximum width for the image container */
+        display: flex; 
+        justify-content: flex-end; 
+        align-items: flex-start; 
+        flex-shrink: 0; 
+        width: 30%; 
+        max-width: 350px; 
     }
 }
 
