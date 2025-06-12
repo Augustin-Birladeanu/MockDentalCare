@@ -196,35 +196,49 @@
   
   </body>
   
-  
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-    const navLinksWrapper = document.querySelector('.nav-links-wrapper');
-    const navLinks = document.querySelector('.nav-links-wrapper ul');
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navbar ul'); // Select the <ul> element
 
-    hamburgerIcon.addEventListener('click', function() {
-        navLinksWrapper.classList.toggle('active');
-        this.classList.toggle('open');
+    // Toggle hamburger menu
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Close menu when a link is clicked (for single page apps)
+    // This part is good for closing the whole menu when a top-level link is clicked
+    document.querySelectorAll('.navbar ul li:not(.dropdown-nav-item) a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinksWrapper.classList.remove('active');
-            hamburgerIcon.classList.remove('open');
-        });
-    });
-
-    document.querySelectorAll('.dropdown-nav-item').forEach(dropdown => {
-        dropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
-            if (window.innerWidth < 992) { 
-                this.classList.toggle('dropdown-open');
+            if (window.innerWidth <= 768 && navMenu.classList.contains('active')) { // Check if it's mobile view and menu is open
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
             }
         });
     });
-});
-</script> -->
+
+    // Handle dropdown toggling specifically for mobile
+    document.querySelectorAll('.dropdown-nav-item > a').forEach(dropdownToggle => {
+        dropdownToggle.addEventListener('click', (e) => {
+            // Check if we are in mobile view (where hamburger is active)
+            if (window.innerWidth <= 768) {
+                e.preventDefault(); // Prevent the default link behavior (e.g., navigating to #our-practice)
+                const parentLi = dropdownToggle.closest('.dropdown-nav-item');
+                parentLi.classList.toggle('active'); // Toggle 'active' class on the parent li
+
+                // Optional: Close other open dropdowns when one is opened
+                document.querySelectorAll('.dropdown-nav-item').forEach(item => {
+                    if (item !== parentLi && item.classList.contains('active')) {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            // For desktop, allow default link behavior and CSS hover to handle it
+        });
+    });
+})
+</script>
   <style>
   
   
@@ -247,124 +261,178 @@
       z-index: -1;
       opacity: 0.7;
   }
-  a{
-    text-decoration: none;
-    color:#042030
-  }
-  
-  .navbar {
-  min-height:70px;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;  
-  }
-  dropdown-nav-item{}
-
-
-  /* 
-  .navbar {
-  min-height:70px;
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;  
-  }
-.nav-menu {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 60px;
-}
-.nav-link {
-transition:0.7s ease;
+a {
+  text-decoration: none;
+  color: #042030;
 }
 
-.nav-link:hover {
-color: 
+.navbar {
+  z-index: 9999;
+  position: fixed;
+  min-height: 70px;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background-color: #f8f8f8; 
+}
+
+.navbar .logo img {
+  height: auto;
+  width: 12rem;
+  margin-left: 1.25rem;
+  padding-top:1rem;
+}
+
+@media (max-width: 62rem) {
+  .navbar .logo img {
+    width: 8rem;
+    margin-left: 1.25rem;
+  }
+}
+
+.navbar ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 0; 
+  display: flex; 
+}
+
+.navbar ul li {
+  padding: 0 15px; 
+}
+
+.navbar ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0; 
+  color: #042030; 
+}
+
+.dropdown-nav-item {
+  transition: 0.7s ease;
+  position: relative; 
+  z-index: 1000;
+}
+
+.dropdown-nav-item:hover {
+  color: rgb(0, 0, 0); 
+}
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9; 
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000; 
+  left: 0; 
+  top: 100%; 
+}
+
+.dropdown-content ul {
+  display: block; 
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown-content ul li {
+  padding: 0; 
+}
+
+.dropdown-content ul li a {
+  color: black; 
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; 
+  text-align: left;
+  z-index: 9999;
+}
+
+.dropdown-content ul li a:hover {
+  background-color: #ddd; 
+}
+@media (min-width:769px){
+.dropdown-nav-item:hover .dropdown-content {
+  display: block;
+}
 }
 
 .hamburger {
-  display: none;
+  display: none; /* Hidden by default, shown in media query */
   cursor: pointer;
-  }
+  z-index: 100; /* Ensure it's above other content if menu is fixed */
+}
 
-  .bar{
+.bar {
   display: block;
-  width: 10rem;
-  height: 3rem;
+  width: 25px; /* Adjusted width */
+  height: 3px; /* Adjusted height */
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: white;  
-  }
-
-
-  @media(max-width:768px){
-  .hamburger{
-  display:block;
-  }
-  
-  .hamburger.active .bar:nth-child(2){
-  opacity:0;
-  }
-  .hamburger.active .bar:nth-child(1){
-  transform: translateY(8px) rotate(45deg);
-    }
-   .hamburger.active .bar:nth-child(3){
-  transform: translateY(-8px) rotate(-45deg);
-    }
-  .nav-menu {
-  position:fixed;
-  left: -100%}
-  top:70px;
-  gap:0;
-  flex-direction:column;
-  width:100%;
-  text-align:center;
-  transition:0.3s;  
-  }
-
-  .nav-menu.active{
-  left:0;
-  }
+  background-color: #333; /* Changed to a dark color for visibility */
 }
-  feafaf */
-  .navbar .logo img{
-      height: auto;
-      width: 14rem; 
-      margin-left: 1.25rem; 
-  
-      @media (max-width: 62rem){ 
-          width: 6.875rem; 
-          margin-left: 1.25rem;
-      }
+
+/* Mobile Navigation (when hamburger is active) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on small screens */
   }
-  
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   .navbar ul {
-    font-family: 'montserrat', sans-serif;
-    font-weight: 700;
-    list-style-type: none;
-    display:flex;
+    position: fixed;
+    left: -100%; /* Off-screen by default */
+    top: 70px; /* Below the navbar */
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
     text-align: center;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; 
-    gap:2rem;
-}
-
- .navbar ul li {
-    position: relative;
-    padding: 0.625rem 0.625rem;
-    font-size: 1.5rem; 
-}
-  
-  .navbar ul li.dropdown-nav-item {
-      position: relative;
+    transition: 0.3s;
+    background-color: #f8f8f8; /* Background for mobile menu */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 99; /* Below hamburger, above other content */
+    height: calc(100vh - 70px); /* Take up remaining viewport height */
+    overflow-y: auto; /* Allow scrolling if content is long */
   }
 
+  .navbar ul.active {
+    left: 0; /* Slide in when active */
+  }
 
+  .navbar ul li {
+    margin: 15px 0; /* Add vertical spacing for mobile list items */
+  }
+  .dropdown-nav-item .dropdown-content {
+    position: static; 
+    display: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: #eee; 
+  }
 
+  .dropdown-nav-item.active .dropdown-content { 
+    display: block;
+  }
+
+  .dropdown-content ul li a {
+      padding-left: 30px; 
+  }
+}
   
   .welcome-text {
       position: absolute;
