@@ -5,18 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chonky Dental Care</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css"> <!--this line links to the CSS file-->
+    <link rel="stylesheet" href="styles.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script src="script.js"></script>
 
   <div class="gradient-background">
           <img src="/assets/whitedottedgradient.jpg">
       </div>
   
-      <nav class = "navbar">
+      <header class="header">
+        <nav class="nav container">
+            <div class="nav_data">
+                <a href="#" class="nav_logo">
+                    <img src="/assets/chonkydentalcareLogo.png">
+                </a>
+
+                <div class="nav_toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li><a href="#" class="nav_link">Home</a></li>
+
+                    <!-- dropdown -->
+                    <li class="dropdown_item">
+                        <div class="nav_link">About Us
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </li>
+                    <!-- dropdown -->
+                    <li class="dropdown_item">
+                        <div class="nav_link">Services
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </li>
+                    <!-- dropdown -->
+                    <li class="dropdown_item">
+                        <div class="nav_link">Resources
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </li>
+                
+
+
+
+                </ul>
+            </div>
+
+
+
+        </nav>
+
+
+
+
+
+
+
+
+      </header>
+      
+
+      <!-- <nav class = "navbar">
       <a href="/" class="logo"><img src="/assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo"> </a>
           <ul>
               <li><a href="">Home</a></li>
@@ -60,7 +118,7 @@
             <span class="bar"></span>
             <span class="bar"></span>
           </div>
-      </nav>
+      </nav> -->
   <div class="slideshow-container">
   <div class = "overlay"></div>
     <div class="slides-wrapper">
@@ -194,788 +252,8 @@
 </section>
   
   
+
+
+
   </body>
-  
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.navbar ul'); // Select the <ul> element
-
-    // Toggle hamburger menu
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked (for single page apps)
-    // This part is good for closing the whole menu when a top-level link is clicked
-    document.querySelectorAll('.navbar ul li:not(.dropdown-nav-item) a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768 && navMenu.classList.contains('active')) { // Check if it's mobile view and menu is open
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-    });
-
-    // Handle dropdown toggling specifically for mobile
-    document.querySelectorAll('.dropdown-nav-item > a').forEach(dropdownToggle => {
-        dropdownToggle.addEventListener('click', (e) => {
-            // Check if we are in mobile view (where hamburger is active)
-            if (window.innerWidth <= 768) {
-                e.preventDefault(); // Prevent the default link behavior (e.g., navigating to #our-practice)
-                const parentLi = dropdownToggle.closest('.dropdown-nav-item');
-                parentLi.classList.toggle('active'); // Toggle 'active' class on the parent li
-
-                // Optional: Close other open dropdowns when one is opened
-                document.querySelectorAll('.dropdown-nav-item').forEach(item => {
-                    if (item !== parentLi && item.classList.contains('active')) {
-                        item.classList.remove('active');
-                    }
-                });
-            }
-            // For desktop, allow default link behavior and CSS hover to handle it
-        });
-    });
-})
-</script>
-  <style>
-  
-  
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html, body {
-      max-width: 100vw;
-      overflow-x: hidden;
-      font-size: 16px; 
-  }
-  
-  .gradient-background img {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      opacity: 0.7;
-  }
-a {
-  text-decoration: none;
-  color: #042030;
-}
-
-.navbar {
-  z-index: 9999;
-  position: fixed;
-  min-height: 70px;
-  width:100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
-  background-color: #f8f8f8; 
-}
-
-.navbar .logo img {
-  height: auto;
-  width: 12rem;
-  margin-left: 1.25rem;
-  padding-top:1rem;
-}
-
-@media (max-width: 62rem) {
-  .navbar .logo img {
-    width: 8rem;
-    margin-left: 1.25rem;
-  }
-}
-
-.navbar ul {
-  list-style: none; 
-  margin: 0; 
-  padding: 0; 
-  display: flex; 
-}
-
-.navbar ul li {
-  padding: 0 15px; 
-}
-
-.navbar ul li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 0; 
-  color: #042030; 
-}
-
-.dropdown-nav-item {
-  transition: 0.7s ease;
-  position: relative; 
-  z-index: 1000;
-}
-
-.dropdown-nav-item:hover {
-  color: rgb(0, 0, 0); 
-}
-
-.dropdown-content {
-  display: none; 
-  position: absolute;
-  background-color: #f9f9f9; 
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1000; 
-  left: 0; 
-  top: 100%; 
-}
-
-.dropdown-content ul {
-  display: block; 
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.dropdown-content ul li {
-  padding: 0; 
-}
-
-.dropdown-content ul li a {
-  color: black; 
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block; 
-  text-align: left;
-  z-index: 9999;
-}
-
-.dropdown-content ul li a:hover {
-  background-color: #ddd; 
-}
-@media (min-width:769px){
-.dropdown-nav-item:hover .dropdown-content {
-  display: block;
-}
-}
-
-.hamburger {
-  display: none; /* Hidden by default, shown in media query */
-  cursor: pointer;
-  z-index: 100; /* Ensure it's above other content if menu is fixed */
-}
-
-.bar {
-  display: block;
-  width: 25px; /* Adjusted width */
-  height: 3px; /* Adjusted height */
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #333; /* Changed to a dark color for visibility */
-}
-
-/* Mobile Navigation (when hamburger is active) */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block; /* Show hamburger on small screens */
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .navbar ul {
-    position: fixed;
-    left: -100%; /* Off-screen by default */
-    top: 70px; /* Below the navbar */
-    gap: 0;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    background-color: #f8f8f8; /* Background for mobile menu */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 99; /* Below hamburger, above other content */
-    height: calc(100vh - 70px); /* Take up remaining viewport height */
-    overflow-y: auto; /* Allow scrolling if content is long */
-  }
-
-  .navbar ul.active {
-    left: 0; /* Slide in when active */
-  }
-
-  .navbar ul li {
-    margin: 15px 0; /* Add vertical spacing for mobile list items */
-  }
-  .dropdown-nav-item .dropdown-content {
-    position: static; 
-    display: none;
-    width: 100%;
-    box-shadow: none;
-    background-color: #eee; 
-  }
-
-  .dropdown-nav-item.active .dropdown-content { 
-    display: block;
-  }
-
-  .dropdown-content ul li a {
-      padding-left: 30px; 
-  }
-}
-  
-  .welcome-text {
-      position: absolute;
-      z-index: 1000;
-      transform: translate(-50%, -50%);
-      top: 55vh;
-      left: 45vw;
-      text-align: left;
-      font-size: clamp(2rem, 6vw, 6.25rem); 
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color:#042f47
-  }
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 100%;
-      background-color: #f9f9f9;
-      min-width: 10rem; 
-      box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2); 
-      z-index: 1;
-      border-radius: 0.25rem; 
-      padding: 0;
-      margin: 0;
-  }
-  
-  .navbar ul li.dropdown-nav-item:hover .dropdown-content {
-    z-index: 999;
-      display: block;
-  }
-  
-  .dropdown-content ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: block;
-  }
-  
-  .dropdown-content ul li {
-      padding: 0;
-      position: static;
-  }
-  
-  .dropdown-content ul li a {
-      color: black;
-      padding: 0.75rem 1rem; /* Adjusted from 12px 16px */
-      text-decoration: none;
-      display: block;
-      text-align: left;
-  }
-  
-  .dropdown-content ul li a:hover {
-      background-color: #ddd;
-      color: #333;
-  }
-  
-        .slideshow-container {
-          user-select: none;
-          height: 100vh;
-          width: 300%;
-          display: flex;
-          justify-content: center;
-          overflow-y: hidden;
-          position: relative;
-          .overlay{
-              background: hsla(0, 0%, 100%, 0.733);
-              width: 100vw;
-              height: 90vh;
-              position: absolute;
-              left: 0;
-              z-index: 10;
-          }
-          .slides-wrapper {
-            width: 100%;
-            height: 90vh;
-            display: flex;
-            animation: imageslideranimation 12s infinite alternate ease-in-out;
-            img {
-              width: calc(100% / 3);
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-  
-        }
-  
-        @keyframes imageslideranimation {
-           0% { transform: translateX(0); }
-          15% { transform: translateX(0); }
-          30% { transform: translateX(-33.33%); }
-          50% { transform: translateX(-33.33%); }
-          65% { transform: translateX(-33.33%); }
-          85% { transform: translateX(-66.66%); }
-          100% { transform: translateX(-66.66%); }
-  
-        }
-  
-  .main-content-container-1 {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 5vw; /* Adjusted from 80px */
-      max-width: 100rem; /* Adjusted from 1600px */
-      width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      font-family:'Roboto', sans-serif;
-      font-size: 1rem; /* Adjusted from 16px */
-      color:#062333;
-  
-      @media (max-width: 62rem){ /* Adjusted from 992px */
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          gap: 3.125rem; /* Adjusted from 50px */
-      }
-  
-      .about-us-section {
-          img {
-              display: flex;
-              margin: 6.25rem auto 0 auto; /* Adjusted from 100px */
-              width: 15.625rem; /* Adjusted from 250px */
-              height: auto;
-          }
-  
-          button{
-              display: flex;
-              background-color: #75c3d6;
-              border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
-              color: #ffffff;
-              padding: 0.625rem 1.25rem; /* Adjusted from 10px 20px */
-              text-align: center;
-              font-size: 1rem; /* Adjusted from 16px */
-              margin-top: 1.25rem; /* Adjusted from 20px */
-              margin-left: 9.375rem; /* Adjusted from 150px */
-              cursor: pointer;
-              border-radius: 0.3125rem; /* Adjusted from 5px */
-  
-              &:hover {
-                  background-color: #042030;
-                  color: #ffffff;
-                  border: 0.125rem solid #042f47; /* Adjusted from 2px */
-              }
-          }
-      }
-  
-      .our-practice {
-          line-height: 2.1875rem; /* Adjusted from 35px */
-          font-weight: normal;
-          width: 32%;
-          text-align: left;
-          h1{
-          line-height: normal;
-          font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
-          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          color:#042f47;
-          margin-bottom: 0.625rem; /* Adjusted from 10px */
-      }
-  
-      @media (max-width: 62rem){ /* Adjusted from 992px */
-              margin-left: auto;
-              margin-right: auto;
-              width: 85%;
-              padding-bottom: 0.625rem; /* Adjusted from 10px */
-          }
-      }
-  
-      .customer-expectations {
-          line-height: 2.1875rem; /* Adjusted from 35px */
-          width: 35%;
-  
-              h1{
-                  line-height: normal;
-                  font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
-                  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                  color:#042f47;
-                  margin-bottom: 0.625rem; /* Adjusted from 10px */
-  
-              }
-          ul {
-              padding-left: 1.875rem; /* Adjusted from 30px */
-              text-align:left;
-              li::marker {
-                  transform: translate(0,0.625rem); /* Adjusted from 10px */
-               font-size: 0.8rem;
-               vertical-align: middle;
-              }
-          }
-  
-      @media (max-width: 62rem){ /* Adjusted from 992px */
-              margin-left: auto;
-              margin-right: auto;
-              width: 85%;
-              padding-bottom: 0.625rem; /* Adjusted from 10px */
-  
-          }
-      }
-  }
-  
-  .here-to-help-section {
-    display: flex;
-      flex-direction: column;
-      justify-content: center;
-    align-items: center;
-      width:100%;
-      text-align: center;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color:#ffffff;
-      background-image: url("/assets/here-to-help-bg.jpg");
-      background-size: cover;
-      min-height: 25rem; /* Adjusted from 400px */
-      h1{
-        width:60%;
-          line-height: normal;
-          font-size: clamp(1.8rem, 3.5vw, 3.125rem); /* Scalable font size */
-          margin-bottom: 0.625rem; /* Adjusted from 10px */
-      }
-      p {
-          font-size: clamp(1.5rem, 3vw, 1.5rem); /* Scalable font size */
-          width:40%;
-          margin: 0 auto;
-          margin-bottom: 0.9375rem; /* Adjusted from 15px */
-      }
-  
-      button{
-          display: flex;
-          background-color: #75c3d6;
-          border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
-          color: #ffffff;
-          padding: 0.625rem 1.25rem; /* Adjusted from 10px 20px */
-          text-align: center;
-          font-size: 1rem; /* Adjusted from 16px */
-          margin-top: 0;
-          cursor: pointer;
-          border-radius: 0.3125rem; /* Adjusted from 5px */
-  
-          &:hover {
-              background-color: #042f47;
-              color: #ffffff;
-              border: 0.125rem solid #042f47; /* Adjusted from 2px */
-          }
-      }
-  
-  
-  }
-  
-  .overlap-container {
-      position: relative;
-      width: 100%;
-  }
-  section#coupons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 6rem; /* Adjusted from 100px */
-      position:absolute;
-      top: 22rem; /* Adjusted from 200px */
-      z-index: 10;
-      text-align: center;;
-  }
-  
-  .coupon-item-special {
-      width: clamp(15rem, 20vw, 18.75rem); /* Scalable width */
-      padding-top: 1.25rem; /* Adjusted from 20px */
-      background-image: url("/assets/bluegradient.png");
-      background-size: cover;
-      height: 9rem; /* Adjusted from 150px */
-      border-radius: 10%;
-      span{
-  
-              display: block;
-              text-align: center;
-              font-size: clamp(2rem, 4vw, 3.125rem); /* Scalable font size */
-              font-weight: bold;
-              color: #ffffff;
-          }
-      p{
-          font-size: clamp(1.5rem, 2vw, 1.5rem); /* Scalable font size */
-          color: #ffffff;
-          margin: 0;
-          padding: 0.625rem; /* Adjusted from 10px */
-          text-align: center;
-          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-      }
-  
-  }
-  .coupon-item-free {
-      width: clamp(15rem, 20vw, 20.625rem); /* Scalable width */
-      background-image: url("/assets/bluegradient.png");
-      background-size: cover;
-      height: 9rem; /* Adjusted from 150px */
-      padding-top: 1.25rem; /* Adjusted from 20px */
-      border-radius: 10%;
-
-  
-          span{
-                  display: block;
-                  text-align: center;
-                  font-size: clamp(2rem, 4vw, 3.125rem); 
-                  font-weight: bold;
-                  color: #ffffff;
-              }
-          p{
-              font-size: clamp(1.5rem, 2vw, 1.5rem);
-              color: #ffffff;
-              margin: 0;
-              padding: 0;
-          }
-  }
-  
-  .business-overview-section-container {
-      margin-top: 10.25rem; /* Adjusted from 100px */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      text-align: center;
-  }
-  
-  .business-overview-section {
-      display: block;
-      align-items: center;
-      color: #042f47;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
-      h1{
-          text-align: center;
-          font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
-          font-weight: bold;
-          margin-bottom: 1.25rem; /* Adjusted from 20px */
-      }
-  p{
-      font-size: clamp(1.25rem, 2vw, 1.5rem); 
-      width: 40%;
-      margin: 0 auto;
-      text-align: center;
-  }
-      button{
-          margin-top: 2.5rem; /* Adjusted from 40px */
-          margin-bottom: 5rem; /* Adjusted from 80px */
-          background-color: #75c3d6;
-          border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
-          color: #ffffff;
-          padding: 0.625rem 1.25rem; /* Adjusted from 10px 20px */
-          text-align: center;
-          font-size: 1rem; /* Adjusted from 16px */
-          cursor: pointer;
-          border-radius: 0.3125rem; /* Adjusted from 5px */
-  
-          &:hover {
-              background-color: #042f47;
-              color: #ffffff;
-              border: 0.125rem solid #042f47; /* Adjusted from 2px */
-          }
-  
-      }
-  
-  }
-  
-.business-overview-section-container{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5rem;;
-}
-
-  .service-overview-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-      justify-content: center;
-      width:100%;
-      gap:1.5rem;
-  }
-  
-  .Family-Dentistry,
-  .Cosmetic-Dentistry,
-  .Orthodontics,
-  .Dental-Implants {
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 21.875rem; 
-      width: 100%; 
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      font-size: clamp(1.8rem, 4vw, 3.125rem); 
-      color: #042f47;
-      font-weight: bold;
-      text-align: center;
-  }
-  
-.service-title {
-    font-size: clamp(1.8rem, 4vw, 3.125rem); /* Moved from parent div */
-    font-weight: bold; /* Moved from parent div */
-    color: #042f47; /* Moved from parent div */
-    margin-bottom: 1rem; /* Space between title and button */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-  .Family-Dentistry { background-image: url("/assets/dentalpatient1.jpg"); 
-  background-position: center;
-}
-  .Cosmetic-Dentistry { background-image: url("/assets/dentalpatient2.jpg"); 
-  background-position: center;
-}
-  .Orthodontics { background-image: url("/assets/dentalpatient3.webp"); 
-  background-position: center;
-}
-  .Dental-Implants { background-image: url("/assets/dentalpatient4.jpg"); 
-  background-position: center;
-}
-  
-
-/* ADD THIS NEW RULE */
-.learn-more-btn {
-    background-color: #75c3d6;
-    border: 0.125rem solid #75c3d6;
-    color: #ffffff;
-    padding: 0.5rem 1rem; /* Smaller padding */
-    font-size: 0.9rem; /* Smaller font */
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
-    &:hover {
-        background-color: #042f47;
-        color: #ffffff;
-        border: 0.125rem solid #042f47;
-    }
-}
-/* ADD THIS NEW RULE */
-.view-all-services-btn-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* Centers the button */
-    margin-top: 3rem; /* Space above the button */
-}
-/* ADD THIS NEW RULE */
-.view-all-services-btn {
-    background-color: #042f47; /* A more prominent color */
-    border: 0.125rem solid #042f47;
-    color: #ffffff;
-    padding: 0.8rem 2rem; /* Larger padding */
-    font-size: 1.2rem; /* Larger font */
-    cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-    &:hover {
-        background-color: #75c3d6;
-        color: #ffffff;
-        border: 0.125rem solid #75c3d6;
-    }
-}
-#Dr-Danvy-Tran {
-    display: flex;
-    justify-content: center;
-    padding: 2.5rem 1rem; /* Keeps some padding from edges */
-    background-color: #f0f7fa;
-    min-height: auto;
-    font-family: 'Inter', sans-serif;
-    width: 100%; /* Take full width on small screens */
-    margin: 0 auto; /* Center the section on the page */
-}
-
-
-
-#Dr-Danvy-Tran .bio-title {
-    font-size: 2.25rem;
-    font-weight: 700;
-    text-align: center;
-    color: #1e40af;
-    margin-bottom: 1.5rem;
-    line-height: 1.25;
-}
-
-@media (min-width: 768px) {
-    #Dr-Danvy-Tran .bio-title {
-        font-size: 3rem;
-    }
-}
-
-/* Updated styles for flexible bio content with image to push it right */
-#Dr-Danvy-Tran .bio-flex-wrapper {
-    flex-direction: column; /* Stack on small screens by default */
-    align-items: center; /* Center items on small screens */
-    gap: 2rem; /* Spacing between bio and image */
-}
-
-    #Dr-Danvy-Tran .bio-flex-wrapper {
-        flex-wrap: nowrap; /* PREVENT wrapping on larger screens */
-        justify-content: space-between; /* Pushes text and image to opposite ends */
-        gap: 3rem; /* Increased gap for more separation */
-    }
-
-    #Dr-Danvy-Tran .bio-content {
-        font-size: 1.125rem;
-        color: #374151;
-        line-height: 1.75;
-        text-align: left; /* Align text left on larger screens */
-        width: 50%; /* Explicit width for text content */
-        flex-shrink: 1; /* Allow it to shrink if needed */
-    }
-
-#Dr-Danvy-Tran .bio-headshot {
-    
-    max-width: 30%; /* Ensure image is responsive within its container */
-    height: auto;
-    border-radius:10%;
-    border: 4px solid #75c3d6;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    object-fit: cover; /* Ensures the image covers its circular area well */
-}
-@media (min-width: 768px) { /* On medium and larger screens */
-    #Dr-Danvy-Tran .bio-flex-wrapper {
-        display: flex;          /* Ensure it's a flex container */
-        flex-direction: row;    /* Arrange items horizontally */
-        flex-wrap: nowrap;      /* Prevent wrapping to the next line */
-        align-items: flex-start; /* Align items to the top */
-        justify-content: space-between; /* Distribute space between items */
-        gap: 3rem;              /* Space between text and image */
-    }
-
-    #Dr-Danvy-Tran .bio-content {
-        width: 65%; /* Or adjust percentage as desired */
-        flex-shrink: 1; /* Allows the text block to shrink if needed */
-    }
-
-    #Dr-Danvy-Tran .bio-headshot-container {
-        display: flex; 
-        justify-content: flex-end; 
-        align-items: flex-start; 
-        flex-shrink: 0; 
-        width: 30%; 
-        max-width: 350px; 
-    }
-}
-
-
-  
-      </style>
   </html>
