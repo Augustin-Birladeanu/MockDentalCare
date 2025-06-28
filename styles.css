@@ -291,8 +291,8 @@ a {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 3rem; /* Adjusted from 80px */
-      width: 90%;
+      gap: 2rem; /* Adjusted from 80px */
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
       font-family:'Roboto', sans-serif;
@@ -307,31 +307,34 @@ a {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          width:auto;
+          width:fit-content;
+          margin-left: auto;
+          margin-right: auto;
           img {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-
-              width: 13rem;
+              position: relative;
+                align-self: center;
+              width: 9rem;
               height: auto;
               margin:2rem;
           }
   
           button{
-              background-color: #75c3d6;
-              border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
+           display: block;
+           margin-left: auto;
+           margin-right: auto;
+            background-color: #75c3d6;
+              border: 0.125rem solid #75c3d6; 
               color: #ffffff;
-              padding: .625rem 1.25rem; /* Adjusted from 10px 20px */
+              padding: .625rem 1.25rem; 
               text-align: center;
-              font-size: 1rem; /* Adjusted from 16px */
+              font-size: 1rem;
               cursor: pointer;
-              border-radius: 0.3125rem; /* Adjusted from 5px */
+              border-radius: 0.3125rem; 
               margin-bottom:2rem;
               &:hover {
                   background-color: #042030;
                   color: #ffffff;
-                  border: 0.125rem solid #042f47; /* Adjusted from 2px */
+                  border: 0.125rem solid #042f47;  
               }
           }
       }
@@ -383,7 +386,7 @@ a {
               margin-left: auto;
               margin-right: auto;
               width: 85%;
-              padding-bottom: 0.625rem; /* Adjusted from 10px */
+              padding-bottom: 0.625rem;
   
           }
       }
@@ -400,8 +403,10 @@ a {
       color:#ffffff;
       background-image: url("/assets/here-to-help-bg.jpg");
       background-size: cover;
-      min-height: 25rem; /* Adjusted from 400px */
+      min-height: 25rem; 
+      padding-bottom: 15px;
       h1{
+        padding:15px;
         width:80%;
           line-height: normal;
           font-size: clamp(1.8rem, 3.5vw, 3.125rem); /* Scalable font size */
@@ -441,23 +446,33 @@ a {
       width: 100%;
   }
   section#coupons {
+    position: absolute;
+    left:50%;
+    transform: translate(-50%);
       display: flex;
-      align-items: center;
       justify-content: center;
       width: 100%;
-      gap: 6rem; /* Adjusted from 100px */
-      position:absolute;
-      top: 22rem; /* Adjusted from 200px */
+      gap: 6rem;
+      top: 23rem; 
       z-index: 10;
-      text-align: center;;
+      text-align: center;
+
+    @media (max-width: 768px){   
+        margin-top: 10rem;
+        margin-left: auto;
+        margin-right: auto;
+        width:90%;
+
+        
+    }
   }
   
   .coupon-item-special {
       width: clamp(15rem, 20vw, 18.75rem); /* Scalable width */
-      padding-top: 1.25rem; /* Adjusted from 20px */
+      padding-top: .25rem; /* Adjusted from 20px */
       background-image: url("/assets/bluegradient.png");
       background-size: cover;
-      height: 9rem; /* Adjusted from 150px */
+      height: 9rem; 
       border-radius: 10%;
       span{
   
@@ -483,7 +498,7 @@ a {
       background-image: url("/assets/bluegradient.png");
       background-size: cover;
       height: 9rem; /* Adjusted from 150px */
-      padding-top: 1.25rem; /* Adjusted from 20px */
+      padding-top: .25rem; /* Adjusted from 20px */
       border-radius: 10%;
 
   
@@ -531,7 +546,6 @@ a {
   }
       button{
           margin-top: 2.5rem; /* Adjusted from 40px */
-          margin-bottom: 5rem; /* Adjusted from 80px */
           background-color: #75c3d6;
           border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
           color: #ffffff;
@@ -549,13 +563,18 @@ a {
   
       }
   
+
+      @media (max-width:768px){
+        padding-top: 100px;
+      }
   }
   
 .business-overview-section-container{
   display:flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;;
+  margin-bottom: 5rem;
+  background-color: #ffffff;
 }
 
   .service-overview-section {
@@ -564,6 +583,9 @@ a {
       justify-content: center;
       width:100%;
       gap:1.5rem;
+      @media (max-width:768px) {
+        gap: .5rem;
+      }
   }
   
   .Family-Dentistry,
@@ -572,7 +594,7 @@ a {
   .Dental-Implants {
       background-size: cover;
       background-repeat: no-repeat;
-      height: 21.875rem; 
+      height: 20rem; 
       width: 100%; 
       display: flex;
       justify-content: center;
@@ -584,11 +606,23 @@ a {
       text-align: center;
   }
   
+  .Family-Dentistry::before,
+.Cosmetic-Dentistry::before,
+.Orthodontics::before,
+.Dental-Implants::before {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute; /* Position it relative to the parent */
+  width: 50%;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0.6); /* White with 50% opacity */
+  z-index: 0; /* Ensure it's above the background image but below content */
+}
 .service-title {
+    z-index: 10;
     font-size: clamp(1.8rem, 4vw, 3.125rem); /* Moved from parent div */
     font-weight: bold; /* Moved from parent div */
     color: #042f47; /* Moved from parent div */
-    margin-bottom: 1rem; /* Space between title and button */
+    margin-bottom: 14rem; /* Space between title and button */
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -608,6 +642,7 @@ a {
 
 /* ADD THIS NEW RULE */
 .learn-more-btn {
+    z-index: 10;
     background-color: #75c3d6;
     border: 0.125rem solid #75c3d6;
     color: #ffffff;
