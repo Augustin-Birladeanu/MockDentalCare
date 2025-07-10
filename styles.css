@@ -684,13 +684,12 @@ a {
     }
 }
 #Dr-Danvy-Tran {
-    justify-content: center;
     padding: 2.5rem 1rem; /* Keeps some padding from edges */
     background-color: #f0f7fa;
     min-height: auto;
     font-family: 'Inter', sans-serif;
-    width: 100%; /* Take full width on small screens */
-    margin: 0 auto; /* Center the section on the page */
+    width: 100%; 
+    margin: 0 auto; 
 }
 
 
@@ -710,25 +709,32 @@ a {
     }
 }
 
+.bio-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
+.bio-flex-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2.5rem; 
+    width: 100%; 
+}
    
 
     #Dr-Danvy-Tran .bio-content {
-        display: flex;
+        flex:1;
         font-size: 1.125rem;
         color: #374151;
         line-height: 1.75;
-        text-align: left; 
-        width: 100%; 
         flex-shrink: 1; 
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
     } 
     .bio-content p{
-        margin-top:5%;
-        width:75%;
+        text-align: left;
+        padding:0.5rem;
     }
 
 #Dr-Danvy-Tran .bio-headshot {
@@ -741,14 +747,76 @@ a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     object-fit: cover;
     
-}
-@media (min-width: 768px) { 
-   
+}@media (min-width: 768px) {
+    /* This is the crucial part for desktop layout */
+    .bio-flex-wrapper {
+        flex-direction: row; /* Lay out bio-content and bio-headshot side-by-side */
+        justify-content: center; /* Centers the entire bio-flex-wrapper if its total content width is less than 100% */
+        align-items: center; /* Vertically centers the bio-content block with the bio-headshot */
+        gap: 4rem; /* Space between the text block and the headshot */
+        max-width: 900px; /* Optional: Constrain the overall width for better readability */
+    }
 
     #Dr-Danvy-Tran .bio-content {
-        width: 65%; /* Or adjust percentage as desired */
+        width: auto; /* Allow flex to manage width */
+        flex: 2; /* Give the text block more space relative to the image */
+        max-width: 60%; /* Limit the max width for readability */
         flex-shrink: 1; /* Allows the text block to shrink if needed */
     }
 
-  
+    #Dr-Danvy-Tran .bio-headshot {
+        flex: 1; /* Allow image to take remaining space, or stick to max-width */
+        max-width: 250px; /* Adjust max width for desktop layout to balance with text */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styling for the section containing the map */
+.location-map-section {
+    padding: 3rem 1rem; /* Adjust padding as needed */
+    background-color: #f9f9f9; /* Light background for the section */
+    text-align: center; /* To center the H2 and address info if they are block elements */
+}
+
+.location-map-section h2 {
+    font-size: 2rem;
+    color: #1e40af; /* Your primary brand color */
+    margin-bottom: 1.5rem;
+}
+
+/* IMPORTANT: Give your map div a defined height and width! */
+#map {
+    height: 450px; /* Adjust as desired */
+    width: 100%;
+    max-width: 900px; /* Optional: limit width on very large screens */
+    margin: 0 auto; /* Center the map horizontally if max-width is set */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+.office-address, .contact-details {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.office-address strong, .contact-details strong {
+    color: #333;
 }

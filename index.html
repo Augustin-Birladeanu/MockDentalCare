@@ -126,51 +126,7 @@
             </div>
         </nav>
       </header>
-      <!-- <nav class = "navbar">
-      <a href="/" class="logo"><img src="/assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo"> </a>
-          <ul>
-              <li><a href="">Home</a></li>
-  
-              <li class="dropdown-nav-item"> <a href="#our-practice">Our Practice <i class="fas fa-caret-down"></i></a>
-  
-                  <div class="dropdown-content">
-                  <ul>
-                      <li><a href="#our-practice">Our Practice</a></li>
-                      <li><a href="#Dr-Danvy-Tran">Dr. Danvy Tran</a></li>
-                      <li><a href="#blog">Blog</a></li>
-                      <li><a href="#office-tour">Office Tour</a></li>
-                  </ul>
-                  </div>
-              </li>
-  
-  
-             <li class="dropdown-nav-item"> <a href="#services">Services <i class="fas fa-caret-down"></i></a>
-                  <div class="dropdown-content">
-                  <ul>
-                      <li><a href="#family-dentistry">Family Dentistry</a></li>
-                      <li><a href="#cosmetic-dentistry">Cosmetic Dentistry</a></li>
-                      <li><a href="#orthodontics">Orthodontics</a></li>
-                      <li><a href="#dental-implants">Dental Implants</a></li>
-                  </ul>
-              </div>
-              </li>
-  
-              <li class="dropdown-nav-item"><a href="#patient-resources">Patient Resources <i class="fas fa-caret-down"></i></a>
-                  <div class="dropdown-content">
-                      <ul>
-                      <li><a href="#special-offers">Special Offers</a></li>
-                      <li><a href="#new-patients">New Patients</a></li>
-                      <li><a href="#reviews">Reviews</a></li>
-                  </ul>
-                  </div>
-              </li>
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-      </nav> -->
+     
   <div class="slideshow-container">
   <div class = "overlay"></div>
     <div class="slides-wrapper">
@@ -284,25 +240,88 @@
         <h1 class="bio-title">
             Meet Our Dentist
         </h1>
+        <div class="bio-flex-wrapper"> 
+
         <div class="bio-content">
             
-            <img src="/assets/DanvyPhoto.jpeg" alt="Dr. Danvy Tran Headshot" class="bio-headshot">
             <p>
                 Dr. Danvy Tran stands out for her compassionate and attentive approach to dentistry. She dedicates time to truly hear each patient's concerns and aspirations, ensuring a comprehensive understanding of their unique dental journey.
             </p>
             <p>
-                Dr. Tran believes in empowering her patients through knowledge. She meticulously explains every available treatment option, making sure you feel confident and informed about your chosen path forward.
-            </p>
-            <p>
                 Having personally navigated dental anxiety in the past, Dr. Tran brings a unique depth of empathy to her practice. This invaluable insight allows her to connect deeply with patients, understanding firsthand the apprehension some may feel about dental procedures.
             </p>
-            <p>
-                Her gentle demeanor and patient-first philosophy have successfully guided countless individuals in overcoming dentophobia, transforming their dental visits into comfortable and positive experiences. Dr. Tran is committed to helping you achieve and maintain excellent oral health with ease.
-            </p>
+            </div>
+            <img src="/assets/DanvyPhoto.jpeg" alt="Dr. Danvy Tran Headshot" class="bio-headshot">
+        </div>
     </div>
 </section>
   
-  
+<section class="testimonials">
+    <div class="testimonials-container">
+        <div class="testimonial-title-container">
+        <h2 class="testimonials-title">OUR CUSTOMER TESTIMONIALS</h1>  
+            <h1 class="title">WHAT CUSTOMERS ARE SAYING</h1>
+        </div>
+        <img src="/assets/quotation.png" alt="quotation mark">
+        <p>What stands out most is the personal care, they genuinely 
+            listen to every concern. Despite my past dental fears,
+             the remarkable staff, from reception to the dentist's 
+             chair, completely put me at ease. I left feeling confident 
+             and secure, knowing I received top-tier care.</p>
+
+        <h1 class="customer-name">Dat Phan</h1>
+        <button>View All Testimonials</button>
+    </div>
+</section>
+    <section class="contact-form-section">
+        <div class="container">
+            <h1>CONTACT US!</h1>
+            <form action="/submit-form" method="POST" class="contact-form">
+                <div class="form-group name-group">
+                    <label for="full-name" class="form-label">NAME <span class="required">(REQUIRED)</span></label>
+                    <div class="name-inputs">
+                        <input type="text" id="first-name" name="first_name" placeholder="First" required aria-label="First Name">
+                        <input type="text" id="last-name" name="last_name" placeholder="Last" required aria-label="Last Name">
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="email" class="form-label">EMAIL <span class="required">(REQUIRED)</span></label>
+                    <input type="email" id="email" name="email" required aria-label="Email Address">
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone" class="form-label">PHONE <span class="required">(REQUIRED)</span></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="e.g., 123-456-7890" aria-label="Phone Number">
+                    </div>
+    
+                <div class="form-group">
+                    <label for="comments" class="form-label">QUESTIONS OR COMMENTS? <span class="required">(REQUIRED)</span></label>
+                    <textarea id="comments" name="comments" rows="6" required aria-label="Your Questions or Comments"></textarea>
+                </div>
+    
+                <div class="form-group submit-group">
+                    <button type="submit" class="btn btn-submit">SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="office-contact-section">
+        <div class="container">
+            <img src="assets/chonkydentalcareLogo.png" alt="Chonky Dental Care Logo">
+            <div class="info-block">
+                <p>Call us at 571-888-9686</p>
+                <p>Fill out the form to contact us, and we will reply quickly!</p>
+
+            </div>
+
+        </div>
+    </section>
+    <div id="map"></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALz_JQVvegvFM3j8s2xRzCshyW9wB-1lI&callback=initMap"></script>
+
+
 
 
 <script src="script.js"></script>
