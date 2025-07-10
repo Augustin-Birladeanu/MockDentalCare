@@ -32,7 +32,7 @@ function initMap() {
     const marker = new google.maps.Marker({
         position: officeLatLng, // Where to place the marker
         map: map, // The map instance to put the marker on
-        title: "Your Dental Office Name", // Text to show on hover
+        title: "Chonky Dental Care", // Text to show on hover
         animation: google.maps.Animation.DROP // Optional: makes the marker drop onto the map
     });
 
