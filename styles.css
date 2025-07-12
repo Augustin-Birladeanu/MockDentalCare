@@ -820,3 +820,222 @@ a {
 .office-address strong, .contact-details strong {
     color: #333;
 }
+
+
+
+
+
+    /* --- Contact Form Section --- */
+    .contact-form-section {
+        padding: 80px 0; /* Top/bottom padding */
+        background-color: #f9f9f9; /* Light background for contrast */
+        text-align: center; /* Center the heading */
+        margin-top: 100px; /* Push content down to account for fixed header, adjust as needed */
+    }
+    
+    .contact-form-section h1 {
+        color: #0056b3; /* A nice blue for the heading */
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+    }
+    
+    .contact-form {
+        max-width: 700px; /* Limit form width for better readability */
+        margin: 0 auto; /* Center the form */
+        padding: 40px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+        margin-bottom: 25px; /* Spacing between form groups */
+        text-align: left; /* Align labels to the left */
+    }
+    
+    .form-label {
+        display: block; /* Make labels take full width */
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #555;
+        font-size: 1rem;
+    }
+    
+    .form-group .required {
+        color: #e74c3c; /* Red color for required text */
+        font-size: 0.85rem;
+        font-weight: normal;
+    }
+    
+    .name-inputs {
+        display: flex;
+        gap: 15px; /* Space between first and last name inputs */
+    }
+    
+    .name-inputs input {
+        flex: 1; /* Make inputs take equal space */
+    }
+    
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form textarea {
+        width: 100%; /* Full width within their container */
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #333;
+        transition: border-color 0.3s ease;
+    }
+    
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form input[type="tel"]:focus,
+    .contact-form textarea:focus {
+        border-color: #007bff; /* Highlight on focus */
+        outline: none; /* Remove default outline */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+    
+    .contact-form textarea {
+        resize: vertical; /* Allow vertical resizing */
+    }
+    
+    .btn-submit {
+        background-color: #007bff; /* Primary button color */
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-transform: uppercase; /* Make button text uppercase */
+        letter-spacing: 0.5px;
+    }
+    
+    .btn-submit:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: translateY(-2px); /* Slight lift effect */
+    }
+    
+    /* --- Office Contact Section --- */
+    .office-contact-section {
+        background-color: #e0f7fa; /* Light blue background */
+        padding: 60px 0;
+        text-align: center;
+        border-top: 1px solid #cceeff;
+    }
+    
+    .office-contact-section .container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+        gap: 30px; /* Space between logo and info */
+    }
+    
+    .office-contact-section img {
+        max-width: 180px; /* Size the logo */
+        height: auto;
+    }
+    
+    .office-contact-section .info-block p {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+        color: #444;
+    }
+    
+    /* Responsive adjustment for office contact section */
+    @media (min-width: 768px) {
+        .office-contact-section .container {
+            flex-direction: row; /* Layout items horizontally on larger screens */
+            justify-content: center; /* Center them */
+            align-items: center;
+        }
+    
+        .office-contact-section .info-block {
+            text-align: left;
+        }
+    }
+    
+    
+    /* --- Footer --- */
+    .footer {
+        background-color: #042030; /* Dark background for the footer */
+        color: #ffffff; /* White text color */
+        padding: 60px 0; /* Top and bottom padding */
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .footer-container {
+        display: grid;
+        gap: 30px; /* Space between grid items */
+        grid-template-columns: 1fr; /* Single column on mobile */
+        text-align: center; /* Center text on mobile */
+    }
+    
+    .footer-logo img {
+        max-width: 150px; /* Adjust logo size in footer */
+        margin-bottom: 20px;
+    }
+    
+    .footer .statement {
+        margin-bottom: 20px;
+        max-width: 400px; /* Limit width for better readability */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer h1 {
+        color: #007bff; /* Accent color for headings */
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .footer ul {
+        list-style: none; /* Remove bullet points */
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .footer ul li a {
+        color: #cccccc; /* Lighter color for links */
+        display: block; /* Make links block-level for padding */
+        padding: 5px 0;
+        transition: color 0.3s ease;
+    }
+    
+    .footer ul li a:hover {
+        color: #ffffff; /* White on hover */
+        text-decoration: underline;
+    }
+    
+    /* Responsive adjustments for footer */
+    @media (min-width: 768px) {
+        .footer-container {
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columns on tablet/desktop */
+            text-align: left; /* Align text to left */
+        }
+    
+        /* Adjust order for layout flexibility if needed */
+        .footer-logo { grid-column: 1 / 2; }
+        .statement { grid-column: 1 / 2; }
+        .footer-links { grid-column: 2 / 3; }
+        .footer-socials { grid-column: 3 / 4; } /* This now contains Hours */
+        .Hours {
+            margin-top: 30px; /* Add space between services and hours */
+        }
+    }
+    
+    /* Further adjustment for larger screens if needed */
+    @media (min-width: 1024px) {
+        .footer-container {
+            grid-template-columns: 1.5fr 1fr 1fr 1fr; /* More space for logo/statement */
+        }
+        .statement { grid-column: auto; } /* Reset column span if 4 columns are preferred */
+    }
