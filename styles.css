@@ -1588,3 +1588,160 @@ a {
     transform: none !important;
     right: 20px;
 }
+.cosmetic-dentistry-section{
+    width:100%;
+}
+.cosmetic-dentistry-section .container{
+    width: 60%; 
+    padding-top:8rem;
+    margin-left: 1rem;   
+    margin-right: auto;
+}
+
+.cosmetic-dentistry-section h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.cosmetic-dentistry-section h3 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.cosmetic-dentistry-section h4 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.cosmetic-dentistry-section p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.cosmetic-dentistry-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.cosmetic-dentistry-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.cosmetic-dentistry-section strong {
+    color: #007bff;
+}
+.orthodontic-dentistry-section{
+    width:100%;
+}
+.orthodontic-dentistry-section .container{
+    width: 60%; 
+    padding-top:8rem;
+    margin-left: 1rem;   
+    margin-right: auto;
+}
+
+.orthodontic-dentistry-section h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.orthodontic-dentistry-section h3 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.orthodontic-dentistry-section h4 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.orthodontic-dentistry-section p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.orthodontic-dentistry-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.orthodontic-dentistry-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.orthodontic-dentistry-section strong {
+    color: #007bff;
+}
+.dental-implant-section {
+    width: 100%;
+}
+
+.dental-implant-section .container {
+    width: 60%;
+    padding-top: 8rem;
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+.dental-implant-section h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.dental-implant-section h3 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.dental-implant-section h4 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.dental-implant-section p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+.dental-implant-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-bottom: 1.5rem;
+}
+
+.dental-implant-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.dental-implant-section strong {
+    color: #007bff;
+}
