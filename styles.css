@@ -1286,7 +1286,7 @@ a {
     align-items: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
-    max-width: 90rem;
+    width: 100%;
 }
 .article-list h1{
     padding-bottom: 1rem;
@@ -1296,25 +1296,27 @@ a {
 .article-list ul{
     display: flex;
     justify-content: center;
-    max-width: 100%;
-    gap:2.5rem;
+    width: 100%;
+    gap:4.5rem;
     flex-wrap: wrap;
 }
 .article-list li{
-    flex-basis: calc(50% - 2rem);
+    flex-basis: calc(50% - 8rem);
     position: relative;
 }
 .article-list img{
-    max-width: 100%;
-    height:15rem;
+    object-fit: cover;
+    width:100%;
+    padding-bottom:1rem;
 }
 .article-list li .date-container{
     background-color: grey;
     width:fit-content;
     padding: 0.2rem 1rem;
     top:1rem;
-    right:2rem;    
+    right:1rem;
     position: absolute;
+
     color:white;
     font-size: 0.8em;
 }
@@ -1329,7 +1331,7 @@ a {
 
 .article-content {
     background-color: #fff;
-    padding: 3rem 1rem;
+    padding: 6rem 1rem;
 }
 
 .article-content .container {
