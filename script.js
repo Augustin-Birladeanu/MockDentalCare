@@ -53,3 +53,90 @@ function initMap() {
         infoWindow.open(map, marker);
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryImages = document.querySelectorAll('.office-tour .imgcontainer img');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeButton = document.querySelector('.close-button');
+
+    galleryImages.forEach(image => {
+        image.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImage.src = image.src;
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const fixedElement = document.getElementById('fixedServiceList');
+    const footer = document.getElementById('testimonial');
+    const header = document.querySelector('.header');
+    const navHeight = header ? header.offsetHeight : 0;
+
+    if (!fixedElement || !footer) {
+        console.warn('One or more required elements for sticky behavior were not found. Please ensure #fixedServiceList and #footerSection exist.');
+        return;
+    }
+
+    const startFixingAt = navHeight;
+
+    const fixedElementHeight = fixedElement.offsetHeight;
+    const buffer = 30;
+
+    let stopFixingAt;
+
+    function calculateStopPoint() {
+        stopFixingAt = footer.offsetTop - fixedElementHeight - buffer;
+    }
+
+    calculateStopPoint();
+
+    function handleScroll() {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollPosition > stopFixingAt) {
+            fixedElement.classList.add('unfixed-bottom');
+            fixedElement.style.top = (stopFixingAt + 'px');
+            fixedElement.style.bottom = 'auto';
+        } else if (scrollPosition >= startFixingAt) {
+            fixedElement.classList.remove('unfixed-bottom');
+            fixedElement.style.position = 'fixed';
+            fixedElement.style.top = '50%';
+            fixedElement.style.transform = 'translateY(-50%)';
+            fixedElement.style.bottom = 'auto';
+        } else {
+             fixedElement.classList.remove('unfixed-bottom');
+             fixedElement.style.position = 'fixed';
+             fixedElement.style.top = '50%';
+             fixedElement.style.transform = 'translateY(-50%)';
+             fixedElement.style.bottom = 'auto';
+        }
+    }
+
+    window.addEventListener('load', handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', () => {
+        calculateStopPoint();
+        handleScroll();
+    });
+});
