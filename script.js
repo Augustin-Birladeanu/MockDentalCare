@@ -11,24 +11,14 @@ showMenu('nav-toggle','nav-menu')
 
 
 
-// This function will be called by the Google Maps API when it has loaded.
 function initMap() {
-    // 1. Define your office's exact Latitude and Longitude coordinates.
-    //    You can get these by finding your location on Google Maps, right-clicking,
-    //    and selecting "What's here?" or by using a lat/lng finder tool.
     const officeLatLng = { lat: 34.052235, lng: -118.243683 }; // Example: Los Angeles, CA
-
-    // 2. Create the Map object.
-    //    It needs to know which HTML element to render into (the 'map' div)
-    //    and how to display (zoom level, center).
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 16, // Zoom level (1 is world, higher is closer)
         center: officeLatLng, // Center the map on your office location
         mapTypeId: 'satellite', // 'roadmap', 'satellite', 'hybrid', 'terrain'
         disableDefaultUI: false // Set to true to hide controls like zoom buttons, street view pegman, etc.
     });
-
-    // 3. Add a Marker to the map at your office location.
     const marker = new google.maps.Marker({
         position: officeLatLng, // Where to place the marker
         map: map, // The map instance to put the marker on

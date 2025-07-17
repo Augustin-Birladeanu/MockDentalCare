@@ -2116,3 +2116,39 @@ a {
 .general-dentistry-section strong {
     color: #007bff;
 }
+.special-offers-section .container {
+    position:relative;
+    padding-top:10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    padding-bottom:20rem;
+}
+.special-offers-section .container button{
+    margin-top:1rem;
+    padding:1rem 2rem;
+    background-color:#007bff ;
+    color:white;
+    font-size: 1em;
+    cursor: pointer;
+}
+.special-offers-section .wrapper {
+    width:1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.special-offers-section .wrapper img{
+    width:1000px;
+    height:500px;
+}
+h1{
+    color: #042f47;
+    font-size: 2.2em;
+}
+h2{
+    color: #042f47;
+    font-size: 2.2em;
+}
