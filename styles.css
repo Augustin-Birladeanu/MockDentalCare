@@ -2246,7 +2246,7 @@ h2{
     background-image: url('/assets/bluegradient.png');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height:400px;
+    min-height:500px;
     padding-top:5rem;
     justify-content: center;
     align-items: center;
@@ -2254,6 +2254,7 @@ h2{
     gap:2rem;
 }
 .new-patients h1{
+    font-size: 4rem;
     color:white;
 }
 .new-patients button {
@@ -2270,4 +2271,29 @@ h2{
 
 .new-patients button:hover {
     background-color: #0056b3;
+}
+.mission-statement .container{
+    width:95%;
+    padding-bottom:10rem;
+}
+.mission-statement .container .wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.mission-statement .container .wrap h1 {
+    padding-top:2rem;
+}
+
+.mission-statement img{
+    width:auto;
+    height:2rem;
+    margin:10px;
+}
+.mission-statement h1{
+    padding-bottom:1.5rem;
+    font-size: 3em;
+}
+.mission-statement h2{
+    padding:1rem;
 }
