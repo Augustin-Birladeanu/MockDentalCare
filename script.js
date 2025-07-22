@@ -79,54 +79,43 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('DOMContentLoaded', () => {
     const fixedElement = document.getElementById('fixedServiceList');
-    const footer = document.getElementById('testimonial');
-    const header = document.querySelector('.header');
-    const navHeight = header ? header.offsetHeight : 0;
+    const testimonialsSection = document.getElementById('testimonial');
 
-    if (!fixedElement || !footer) {
-        console.warn('One or more required elements for sticky behavior were not found. Please ensure #fixedServiceList and #footerSection exist.');
+    if (!fixedElement || !testimonialsSection) {
+        console.warn('Required elements for sticky behavior were not found.');
         return;
     }
 
-    const startFixingAt = navHeight;
+    // The element will appear after scrolling past the header
+    const buffer = 20; // Hides the element 20px before it touches the section
 
-    const fixedElementHeight = fixedElement.offsetHeight;
-    const buffer = 30;
+    let hideAt;
 
-    let stopFixingAt;
-
-    function calculateStopPoint() {
-        stopFixingAt = footer.offsetTop - fixedElementHeight - buffer;
+    function calculateHidePoint() {
+        hideAt = testimonialsSection.offsetTop - window.innerHeight + buffer;
     }
 
-    calculateStopPoint();
+    calculateHidePoint();
 
     function handleScroll() {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (scrollPosition > stopFixingAt) {
-            fixedElement.classList.add('unfixed-bottom');
-            fixedElement.style.top = (stopFixingAt + 'px');
-            fixedElement.style.bottom = 'auto';
-        } else if (scrollPosition >= startFixingAt) {
-            fixedElement.classList.remove('unfixed-bottom');
+        if (scrollPosition < hideAt) {
+            fixedElement.style.opacity = '1';
+            fixedElement.style.visibility = 'visible';
             fixedElement.style.position = 'fixed';
             fixedElement.style.top = '50%';
             fixedElement.style.transform = 'translateY(-50%)';
-            fixedElement.style.bottom = 'auto';
         } else {
-             fixedElement.classList.remove('unfixed-bottom');
-             fixedElement.style.position = 'fixed';
-             fixedElement.style.top = '50%';
-             fixedElement.style.transform = 'translateY(-50%)';
-             fixedElement.style.bottom = 'auto';
+            fixedElement.style.opacity = '0';
+            fixedElement.style.visibility = 'hidden';
         }
     }
 
     window.addEventListener('load', handleScroll);
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', () => {
-        calculateStopPoint();
+        calculateHidePoint();
         handleScroll();
     });
 });

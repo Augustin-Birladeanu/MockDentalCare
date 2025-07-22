@@ -8,8 +8,11 @@
       max-width: 100vw;
       overflow-x: hidden;
       font-size: 16px; 
+      font-family: 'Inter', sans-serif;
+
   }
   
+
   .gradient-background img {
       position: fixed;
       width: 100vw;
@@ -96,8 +99,6 @@ a {
     opacity: 1;
 }
 
-
-/* if on mobile */
 @media screen and (max-width:768px){
     .nav_menu{
         position:absolute;
@@ -121,7 +122,6 @@ a {
 
 .nav_link{
     color:black;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
     font-size: 1.25rem;
     padding:1.25rem 1.5rem;
     display: flex;
@@ -153,7 +153,6 @@ a {
 }
 .dropdown_link{
     padding:1rem 1.25rem 1rem 2.25rem ;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
     font-size: 1rem;
     color:rgb(0, 0, 0);
     display:flex;
@@ -242,7 +241,6 @@ a {
     left: 45vw;
     text-align: left;
     font-size: clamp(2rem, 6vw, 6.25rem);
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#042f47
 }
   
@@ -291,11 +289,10 @@ a {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 2rem; /* Adjusted from 80px */
+      gap: 2rem;
       width: 95%;
       margin-left: auto;
       margin-right: auto;
-      font-family:'Roboto', sans-serif;
       font-size: 1rem; 
       color:#062333;
   
@@ -322,52 +319,39 @@ a {
            display: block;
            margin-left: auto;
            margin-right: auto;
-            background-color: #75c3d6;
-              border: 0.125rem solid #75c3d6; 
-              color: #ffffff;
-              padding: .625rem 1.25rem; 
-              text-align: center;
-              font-size: 1rem;
-              cursor: pointer;
-              border-radius: 0.3125rem; 
-              margin-bottom:2rem;
-              &:hover {
-                  background-color: #042030;
-                  color: #ffffff;
-                  border: 0.125rem solid #042f47;  
-              }
+           margin-bottom:2rem;
+            
+            
           }
       }
   
       .our-practice {
         width: 30rem;
-          line-height: 2.1875rem; /* Adjusted from 35px */
+          line-height: 2.1875rem; 
           font-weight: normal;
           text-align: left;
           h1{
           line-height: normal;
-          font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
-          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: clamp(2rem, 3.5vw, 3.125rem); 
           color:#042f47;
-          margin-bottom: 0.625rem; /* Adjusted from 10px */
+          margin-bottom: 0.625rem; 
       }
   
-      @media (max-width: 768px){ /* Adjusted from 992px */
+      @media (max-width: 768px){ 
               margin-left: auto;
               margin-right: auto;
               width: 85%;
-              padding-bottom: 0.625rem; /* Adjusted from 10px */
+              padding-bottom: 0.625rem; 
           }
       }
   
       .customer-expectations {
-          line-height: 2.1875rem; /* Adjusted from 35px */
+          line-height: 2.1875rem; 
 
   
               h1{
                   line-height: normal;
-                  font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
-                  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                  font-size: clamp(2rem, 3.5vw, 3.125rem); 
                   color:#042f47;
                   margin-bottom: 0.625rem; /* Adjusted from 10px */
   
@@ -399,43 +383,31 @@ a {
     align-items: center;
       width:100%;
       text-align: center;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       color:#ffffff;
       background-image: url("/assets/here-to-help-bg.jpg");
       background-size: cover;
       min-height: 25rem; 
-      padding-bottom: 15px;
+      padding-bottom: 5rem;
+      padding-top:2rem;
       h1{
+        color:white;
         padding:15px;
         width:80%;
-          line-height: normal;
-          font-size: clamp(1.8rem, 3.5vw, 3.125rem); /* Scalable font size */
-          margin-bottom: 0.625rem; /* Adjusted from 10px */
+        line-height: normal;
+        font-size: clamp(1.8rem, 3.5vw, 3.125rem); 
+        margin-bottom: 0.625rem; 
       }
       p {
-          font-size: clamp(1.5rem, 3vw, 1.5rem); /* Scalable font size */
+          font-size: clamp(1.5rem, 3vw, 1.5rem); 
           width:40%;
           margin: 0 auto;
-          margin-bottom: 0.9375rem; /* Adjusted from 15px */
+          margin-bottom: 0.9375rem; 
       }
   
       button{
           display: flex;
-          background-color: #75c3d6;
-          border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
-          color: #ffffff;
-          padding: 0.625rem 1.25rem; /* Adjusted from 10px 20px */
           text-align: center;
-          font-size: 1rem; /* Adjusted from 16px */
-          margin-top: 0;
-          cursor: pointer;
-          border-radius: 0.3125rem; /* Adjusted from 5px */
-  
-          &:hover {
-              background-color: #042f47;
-              color: #ffffff;
-              border: 0.125rem solid #042f47; /* Adjusted from 2px */
-          }
+          font-size: 1rem;         
       }
   
   
@@ -444,23 +416,23 @@ a {
   .overlap-container {
       position: relative;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
   }
   section#coupons {
-    position: absolute;
-    left:50%;
-    transform: translate(-50%);
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 6rem;
-      top: 23rem; 
-      z-index: 10;
-      text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 6rem;
+    top: -2rem; 
+    z-index: 10;
+    text-align: center;
 
-    @media (max-width: 768px){   
-        margin-top: 10rem;
-        margin-left: auto;
-        margin-right: auto;
+    @media (max-width: 768px){           
         width:90%;
 
         
@@ -468,8 +440,11 @@ a {
   }
   
   .coupon-item-special {
-      width: clamp(15rem, 20vw, 18.75rem); /* Scalable width */
-      padding-top: .25rem; /* Adjusted from 20px */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      width: clamp(15rem, 20vw, 18.75rem); 
+      padding: 0.5rem; 
       background-image: url("/assets/bluegradient.png");
       background-size: cover;
       height: 9rem; 
@@ -478,27 +453,29 @@ a {
   
               display: block;
               text-align: center;
-              font-size: clamp(2rem, 4vw, 3.125rem); /* Scalable font size */
+              font-size: clamp(2rem, 4vw, 3.125rem); 
               font-weight: bold;
               color: #ffffff;
           }
       p{
-          font-size: clamp(1.5rem, 2vw, 1.5rem); /* Scalable font size */
+          font-size: clamp(1.5rem, 2vw, 1.5rem);
           color: #ffffff;
           margin: 0;
-          padding: 0.625rem; /* Adjusted from 10px */
+          padding: 0.625rem; 
           text-align: center;
-          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
       }
   
   }
   .coupon-item-free {
-      width: clamp(15rem, 20vw, 20.625rem); /* Scalable width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      width: clamp(15rem, 20vw, 20.625rem);
       background-image: url("/assets/bluegradient.png");
       background-size: cover;
-      height: 9rem; /* Adjusted from 150px */
-      padding-top: .25rem; /* Adjusted from 20px */
+      height: 9rem; 
+      padding-top: .25rem; 
       border-radius: 10%;
 
   
@@ -518,7 +495,6 @@ a {
   }
   
   .business-overview-section-container {
-      margin-top: 0rem; /* Adjusted from 100px */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -529,14 +505,12 @@ a {
   .business-overview-section {
       display: block;
       align-items: center;
-      color: #042f47;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
+      color: #042f47;  
       h1{
           text-align: center;
-          font-size: clamp(2rem, 3.5vw, 3.125rem); /* Scalable font size */
+          font-size: clamp(2rem, 3.5vw, 3.125rem); 
           font-weight: bold;
-          margin-bottom: 1.25rem; /* Adjusted from 20px */
+          margin-bottom: 1.25rem; 
       }
   p{
       font-size: clamp(1.25rem, 2vw, 1.5rem); 
@@ -545,28 +519,11 @@ a {
       text-align: center;
   }
       button{
-          margin-top: 2.5rem; /* Adjusted from 40px */
-          background-color: #75c3d6;
-          border: 0.125rem solid #75c3d6; /* Adjusted from 2px */
-          color: #ffffff;
-          padding: 0.625rem 1.25rem; /* Adjusted from 10px 20px */
+          margin-top: 2.5rem; 
           text-align: center;
-          font-size: 1rem; /* Adjusted from 16px */
-          cursor: pointer;
-          border-radius: 0.3125rem; /* Adjusted from 5px */
-  
-          &:hover {
-              background-color: #042f47;
-              color: #ffffff;
-              border: 0.125rem solid #042f47; /* Adjusted from 2px */
-          }
-  
       }
   
 
-      @media (max-width:768px){
-        padding-top: 100px;
-      }
   }
   
 .business-overview-section-container{
@@ -584,6 +541,9 @@ a {
       justify-content: center;
       width:100%;
       gap:1.5rem;
+      padding-left:2rem;
+      padding-right:2rem;
+
       @media (max-width:768px) {
         gap: .5rem;
       }
@@ -611,20 +571,18 @@ a {
 .Cosmetic-Dentistry::before,
 .Orthodontics::before,
 .Dental-Implants::before {
-  content: ''; /* Required for pseudo-elements */
-  position: absolute; /* Position it relative to the parent */
+  content: ''; 
+  position: absolute; 
   width: 50%;
   height: 40%;
-  background-color: rgba(255, 255, 255, 0.6); /* White with 50% opacity */
-  z-index: 0; /* Ensure it's above the background image but below content */
+  z-index: 0; 
 }
 .service-title {
     z-index: 10;
-    font-size: clamp(1.8rem, 4vw, 3.125rem); /* Moved from parent div */
-    font-weight: bold; /* Moved from parent div */
-    color: #042f47; /* Moved from parent div */
-    margin-bottom: 14rem; /* Space between title and button */
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3.125rem); 
+    font-weight: bold; 
+    color: #042f47;
+    margin-bottom: 12rem;
 }
 
   .Family-Dentistry { background-image: url("/assets/dentalpatient1.jpg"); 
@@ -633,7 +591,7 @@ a {
   .Cosmetic-Dentistry { background-image: url("/assets/dentalpatient2.jpg"); 
   background-position: center;
 }
-  .Orthodontics { background-image: url("/assets/dentalpatient3.webp"); 
+  .Orthodontics { background-image: url("/assets/dentalpatient3.jpeg"); 
   background-position: center;
 }
   .Dental-Implants { background-image: url("/assets/dentalpatient4.jpg"); 
@@ -641,59 +599,27 @@ a {
 }
   
 
-/* ADD THIS NEW RULE */
 .learn-more-btn {
     z-index: 10;
-    background-color: #75c3d6;
-    border: 0.125rem solid #75c3d6;
-    color: #ffffff;
-    padding: 0.5rem 1rem; /* Smaller padding */
-    font-size: 0.9rem; /* Smaller font */
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
-    &:hover {
-        background-color: #042f47;
-        color: #ffffff;
-        border: 0.125rem solid #042f47;
-    }
+    font-size: 1rem;
 }
-/* ADD THIS NEW RULE */
 .view-all-services-btn-container {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centers the button */
-    margin-top: 3rem; /* Space above the button */
+    justify-content: center; 
+    padding-bottom:2rem;
+    margin-top: 2rem; 
 }
-/* ADD THIS NEW RULE */
 .view-all-services-btn {
-    background-color: #042f47; /* A more prominent color */
-    border: 0.125rem solid #042f47;
-    color: #ffffff;
-    padding: 0.8rem 2rem; /* Larger padding */
-    font-size: 1.2rem; /* Larger font */
-    cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-    &:hover {
-        background-color: #75c3d6;
-        color: #ffffff;
-        border: 0.125rem solid #75c3d6;
-    }
+    font-size: 1.2rem; 
 }
 #Dr-Danvy-Tran {
-    padding: 2.5rem 1rem; /* Keeps some padding from edges */
+    padding: 2.5rem 1rem; 
     background-color: #f0f7fa;
     min-height: auto;
-    font-family: 'Inter', sans-serif;
     width: 100%; 
     margin: 0 auto; 
 }
-
-
 
 #Dr-Danvy-Tran .bio-title {
     font-size: 2.25rem;
@@ -714,6 +640,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 
@@ -749,51 +676,47 @@ a {
     object-fit: cover;
 }
 @media (min-width: 768px) {
-    /* This is the crucial part for desktop layout */
     .bio-flex-wrapper {
-        flex-direction: row; /* Lay out bio-content and bio-headshot side-by-side */
-        justify-content: center; /* Centers the entire bio-flex-wrapper if its total content width is less than 100% */
-        align-items: center; /* Vertically centers the bio-content block with the bio-headshot */
-        gap: 4rem; /* Space between the text block and the headshot */
-        max-width: 900px; /* Optional: Constrain the overall width for better readability */
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 4rem; 
+        max-width: 900px; 
     }
 
     #Dr-Danvy-Tran .bio-content {
-        width: auto; /* Allow flex to manage width */
-        flex: 2; /* Give the text block more space relative to the image */
-        max-width: 60%; /* Limit the max width for readability */
-        flex-shrink: 1; /* Allows the text block to shrink if needed */
+        width: auto; 
+        flex: 2; 
+        max-width: 60%; 
+        flex-shrink: 1; 
     }
 
     #Dr-Danvy-Tran .bio-headshot {
-        flex: 1; /* Allow image to take remaining space, or stick to max-width */
-        max-width: 250px; /* Adjust max width for desktop layout to balance with text */
+        flex: 1; 
+        max-width: 250px; 
     }
 }
 
 
-/* Styling for the section containing the map */
 .location-map-section {
-    padding: 3rem 1rem; /* Adjust padding as needed */
-    background-color: #f9f9f9; /* Light background for the section */
-    text-align: center; /* To center the H2 and address info if they are block elements */
+    padding: 3rem 1rem; 
+    background-color: #f9f9f9; 
+    text-align: center; 
 }
 
 .location-map-section h2 {
     font-size: 2rem;
-    color: #1e40af; /* Your primary brand color */
+    color: #1e40af; 
     margin-bottom: 1.5rem;
 }
-
-/* IMPORTANT: Give your map div a defined height and width! */
 #map {
-    height: 450px; /* Adjust as desired */
+    height: 450px; 
     width: 100%;
-    max-width: 900px; /* Optional: limit width on very large screens */
-    margin: 0 auto; /* Center the map horizontally if max-width is set */
-    border: 1px solid #ddd; /* Subtle border */
-    border-radius: 8px; /* Slightly rounded corners */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Soft shadow */
+    max-width: 900px; 
+    margin: 0 auto; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
 }
 
 .office-address, .contact-details {
@@ -807,16 +730,10 @@ a {
     color: #333;
 }
 
-
-
-
-
-    /* --- Contact Form Section --- */
     .contact-form-section {
-        padding: 80px 0; /* Top/bottom padding */
-        background-color: #f9f9f9; /* Light background for contrast */
-        text-align: center; /* Center the heading */
-        margin-top: 100px; /* Push content down to account for fixed header, adjust as needed */
+        padding: 80px 0; 
+        background-color: #f9f9f9; 
+        text-align: center; 
     }
     
     .contact-form-section h1 {
@@ -826,8 +743,8 @@ a {
     }
     
     .contact-form {
-        max-width: 700px; /* Limit form width for better readability */
-        margin: 0 auto; /* Center the form */
+        max-width: 700px; 
+        margin: 0 auto; 
         padding: 40px;
         background-color: #ffffff;
         border-radius: 8px;
@@ -835,12 +752,12 @@ a {
     }
     
     .form-group {
-        margin-bottom: 25px; /* Spacing between form groups */
-        text-align: left; /* Align labels to the left */
+        margin-bottom: 25px; 
+        text-align: left; 
     }
     
     .form-label {
-        display: block; /* Make labels take full width */
+        display: block; 
         margin-bottom: 8px;
         font-weight: bold;
         color: #555;
@@ -848,25 +765,25 @@ a {
     }
     
     .form-group .required {
-        color: #e74c3c; /* Red color for required text */
+        color: #e74c3c; 
         font-size: 0.85rem;
         font-weight: normal;
     }
     
     .name-inputs {
         display: flex;
-        gap: 15px; /* Space between first and last name inputs */
+        gap: 15px; 
     }
     
     .name-inputs input {
-        flex: 1; /* Make inputs take equal space */
+        flex: 1; 
     }
     
     .contact-form input[type="text"],
     .contact-form input[type="email"],
     .contact-form input[type="tel"],
     .contact-form textarea {
-        width: 100%; /* Full width within their container */
+        width: 100%; 
         padding: 12px 15px;
         border: 1px solid #ddd;
         border-radius: 5px;
@@ -879,37 +796,23 @@ a {
     .contact-form input[type="email"]:focus,
     .contact-form input[type="tel"]:focus,
     .contact-form textarea:focus {
-        border-color: #007bff; /* Highlight on focus */
-        outline: none; /* Remove default outline */
+        border-color: #007bff; 
+        outline: none; 
         box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
     }
     
     .contact-form textarea {
-        resize: vertical; /* Allow vertical resizing */
+        resize: vertical; 
     }
     
     .btn-submit {
-        background-color: #007bff; /* Primary button color */
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        font-weight: bold;
-        cursor: pointer;
+
         transition: background-color 0.3s ease, transform 0.2s ease;
-        text-transform: uppercase; /* Make button text uppercase */
-        letter-spacing: 0.5px;
+        letter-spacing: 1.5px;
     }
     
-    .btn-submit:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-        transform: translateY(-2px); /* Slight lift effect */
-    }
-    
-    /* --- Office Contact Section --- */
     .office-contact-section {
-        background-color: #e0f7fa; /* Light blue background */
+        background-color: #e0f7fa; 
         padding: 60px 0;
         text-align: center;
         border-top: 1px solid #cceeff;
@@ -917,13 +820,13 @@ a {
     
     .office-contact-section .container {
         display: flex;
-        flex-direction: column; /* Stack items vertically on small screens */
+        flex-direction: column;
         align-items: center;
-        gap: 30px; /* Space between logo and info */
+        gap: 30px; 
     }
     
     .office-contact-section img {
-        max-width: 180px; /* Size the logo */
+        max-width: 180px; 
         height: auto;
     }
     
@@ -935,8 +838,8 @@ a {
     
     @media (min-width: 768px) {
         .office-contact-section .container {
-            flex-direction: row; /* Layout items horizontally on larger screens */
-            justify-content: center; /* Center them */
+            flex-direction: row; 
+            justify-content: center; 
             align-items: center;
         }
     
@@ -944,39 +847,37 @@ a {
             text-align: left;
         }
     }
-    
-    
-    /* --- Footer --- */
+
     .footer {
-        background-color: #042030; /* Dark background for the footer */
-        color: #ffffff; /* White text color */
-        padding: 60px 0; /* Top and bottom padding */
+        background-color: #042030; 
+        color: #ffffff; 
+        padding: 60px 0; 
         font-size: 0.95rem;
         line-height: 1.6;
     }
     
     .footer-container {
         display: grid;
-        gap: 30px; /* Space between grid items */
-        grid-template-columns: 1fr; /* Single column on mobile */
-        text-align: center; /* Center text on mobile */
+        gap: 30px; 
+        grid-template-columns: 1fr; 
+        text-align: center; 
         padding-left:2rem;
     }
     
     .footer-logo img {
-        max-width: 150px; /* Adjust logo size in footer */
+        max-width: 150px; 
         margin-bottom: 20px;
     }
     
     .footer .statement {
         margin-bottom: 20px;
-        max-width: 400px; /* Limit width for better readability */
+        max-width: 400px; 
         margin-left: auto;
         margin-right: auto;
     }
     
     .footer h1 {
-        color: #007bff; /* Accent color for headings */
+        color: #007bff; 
         font-size: 1.3rem;
         margin-bottom: 15px;
         text-transform: uppercase;
@@ -984,14 +885,14 @@ a {
     }
     
     .footer ul {
-        list-style: none; /* Remove bullet points */
+        list-style: none; 
         padding: 0;
         margin-bottom: 20px;
     }
     
     .footer ul li a {
-        color: #cccccc; /* Lighter color for links */
-        display: block; /* Make links block-level for padding */
+        color: #cccccc; 
+        display: block; 
         padding: 5px 0;
         transition: color 0.3s ease;
     }
@@ -1001,29 +902,26 @@ a {
         text-decoration: underline;
     }
     
-    /* Responsive adjustments for footer */
     @media (min-width: 768px) {
         .footer-container {
-            grid-template-columns: 1fr 1fr 1fr; /* 3 columns on tablet/desktop */
-            text-align: left; /* Align text to left */
+            grid-template-columns: 1fr 1fr 1fr; 
+            text-align: left; 
         }
     
-        /* Adjust order for layout flexibility if needed */
         .footer-logo { grid-column: 1 / 2; }
         .statement { grid-column: 1 / 2; }
         .footer-links { grid-column: 2 / 3; }
-        .footer-socials { grid-column: 3 / 4; } /* This now contains Hours */
+        .footer-socials { grid-column: 3 / 4; } 
         .Hours {
-            margin-top: 30px; /* Add space between services and hours */
+            margin-top: 30px;
         }
     }
     
-    /* Further adjustment for larger screens if needed */
     @media (min-width: 1024px) {
         .footer-container {
-            grid-template-columns: 1.5fr 1fr 1fr 1fr; /* More space for logo/statement */
+            grid-template-columns: 1.5fr 1fr 1fr 1fr; 
         }
-        .statement { grid-column: auto; } /* Reset column span if 4 columns are preferred */
+        .statement { grid-column: auto; } 
     }
 
 
@@ -1036,26 +934,22 @@ a {
     position: relative;
     z-index: 10;
     justify-content: center;
+    padding-bottom:5rem;
 }
 .book-apt button{
     margin-top:1rem;
     padding:1rem 2rem;
-    background-color:#007bff ;
-    color:white;
-    font-size: 1em;
-    cursor: pointer;
+
 }
-.book-apt button:hover{
-    background-color: #0056b3;
-}
+
 .container h1{
     color:#042f47
 
 }
 .bio {
     background-color: #f9f9f9;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .bio-container {
@@ -1091,38 +985,8 @@ a {
     color: #444;
 }
 .bio button{
-    display: block;
-    margin-top:1rem;
-    padding:1rem 2rem;
-    background-color:#007bff ;
-    color:white;
-    font-size: 1em;
+    display: block;   
     margin: 1rem auto 0 auto;
-    cursor: pointer;
-}
-.bio button:hover{
-    background-color: #0056b3;
-
-}
-
-.bio-button {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: inline-block;
-}
-
-.bio-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
@@ -1141,10 +1005,6 @@ a {
     }
 
     .bio-button {
-        padding: 12px 25px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 300px; 
         margin: 0 auto; 
         display: block;
     }
@@ -1183,23 +1043,17 @@ a {
     margin-top:2rem;
 }
 .testimonials-container button{
-    margin-top:1rem;
-    padding:1rem 2rem;
-    background-color:#007bff ;
-    color:white;
-    font-size: 1em;
-    cursor: pointer;
+    margin-top:2rem;
+    margin-bottom:3rem;
 }
-.testimonials-container button:hover{
-    background-color: #0056b3;
-}
+
 
 .intro-container{
     margin-top:7rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
 }
 
 .intro-container h1{
@@ -1237,21 +1091,22 @@ a {
     align-items: flex-start;
     gap:2.5rem;
     padding:1rem;
+    background-color: white;
 }
 .practice-overview h1{
     color: #000000;
-    padding-top:0.7rem;
 }
 .practice-overview .logo-title-container{
     display: flex;
     flex-direction: row;
     gap: 2rem;
     padding-bottom:1.25rem;
+    align-items: center;
 }
 
 .practice-overview .logo-title-container img{
     width:auto;
-    height:2.5rem;
+    height:3.5rem;
 }
 .practice-overview .right-container img{
     max-width:100%;
@@ -1418,6 +1273,8 @@ a {
     align-items: center;
     width: 100vw;
     flex-direction: column;
+    padding-bottom:5rem;
+    background-color: white;
 }
 .office-tour .container{
     display: flex;
@@ -1481,17 +1338,68 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-.family-dentistry-section{
+
+.family-dentistry-section,
+.cosmetic-dentistry-section,
+.orthodontic-dentistry-section,
+.dental-implant-section,
+.sleep-apnea-section,
+.dental-fillings-section,
+.root-canal-section,
+.dental-exam-cleaning-section,
+.teeth-whitening-section,
+.dental-crowns-section,
+.general-dentistry-section{
     width:100%;
+    background-color: white;
 }
-.family-dentistry-section .container{
-    width: 60%; 
+.family-dentistry-section .container,
+.cosmetic-dentistry-section .container,
+.orthodontic-dentistry-section .container,
+.dental-implant-section .container,
+.sleep-apnea-section .container,
+.dental-fillings-section .container,
+.root-canal-section .container,
+.dental-exam-cleaning-section .container,
+.teeth-whitening-section .container,
+.dental-crowns-section .container,
+.general-dentistry-section .container{
+    width: 80%; 
     padding-top:8rem;
+    padding-bottom: 8rem;
     margin-left: 1rem;   
     margin-right: auto;
 }
-
-.family-dentistry-section h2 {
+.family-dentistry-section .faq-list summary,
+.orthodontic-dentistry-section .faq-list summary,
+.dental-implant-section .faq-list summary,
+.sleep-apnea-section .faq-list summary,
+.dental-fillings-section .faq-list summary,
+.root-canal-section .faq-list summary,
+.dental-exam-cleaning-section .faq-list summary,
+.teeth-whitening-section .faq-list summary,
+.dental-crowns-section .faq-list summary,
+.general-dentistry-section .faq-list summary{
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    padding-left:1rem;
+    cursor: pointer;
+}
+.family-dentistry-section h2,
+.cosmetic-dentistry-section h2,
+.orthodontic-dentistry-section h2 ,
+.dental-implant-section h2,
+.sleep-apnea-section h2,
+.dental-fillings-section h2,
+.root-canal-section h2,
+.dental-exam-cleaning-section h2,
+.teeth-whitening-section h2,
+.dental-crowns-section h2,
+.general-dentistry-section h2{
     font-size: 2.2rem;
     color: #2c3e50;
     margin-top: 2rem;
@@ -1500,14 +1408,34 @@ a {
     padding-bottom: 0.5rem;
 }
 
-.family-dentistry-section h3 {
+.family-dentistry-section h3,
+.cosmetic-dentistry-section h3,
+.orthodontic-dentistry-section h3,
+.dental-implant-section h3,
+.sleep-apnea-section h3,
+.dental-fillings-section h3,
+.root-canal-section h3,
+.dental-exam-cleaning-section h3,
+.teeth-whitening-section h3,
+.dental-crowns-section h3,
+.general-dentistry-section h3 {
     font-size: 1.8rem;
     color: #34495e;
     margin-top: 1.8rem;
     margin-bottom: 0.8rem;
 }
 
-.family-dentistry-section h4 {
+.family-dentistry-section h4,
+.cosmetic-dentistry-section h4,
+.orthodontic-dentistry-section h4,
+.dental-implant-section h4,
+.sleep-apnea-section h4,
+.dental-fillings-section h4,
+.root-canal-section h4,
+.dental-exam-cleaning-section h4,
+.teeth-whitening-section h4,
+.dental-crowns-section h4,
+.general-dentistry-section h4 {
     font-size: 1.3rem;
     color: #555;
     margin-top: 1.5rem;
@@ -1515,23 +1443,85 @@ a {
     font-weight: bold;
 }
 
-.family-dentistry-section p {
+.family-dentistry-section p,
+.cosmetic-dentistry-section p,
+.orthodontic-dentistry-section p,
+.dental-implant-section p,
+.sleep-apnea-section p,
+.dental-fillings-section p,
+.root-canal-section p,
+.dental-exam-cleaning-section p,
+.teeth-whitening-section p,
+.dental-crowns-section p,
+.general-dentistry-section p{
     margin-bottom: 1.2rem;
     text-align: justify;
+    padding: 0.5rem;
+    line-height:150%;
+    font-size: larger;
 }
 
-.family-dentistry-section ul {
+.family-dentistry-section ul,
+.cosmetic-dentistry-section ul,
+.orthodontic-dentistry-section ul,
+.dental-implant-section ul,
+.sleep-apnea-section ul,
+.dental-fillings-section ul,
+.root-canal-section ul,
+.dental-exam-cleaning-section ul,
+.teeth-whitening-section ul,
+.dental-crowns-section ul,
+.general-dentistry-section ul {
     list-style-type: disc;
     padding-left: 25px;
     margin-bottom: 1.5rem;
 }
 
-.family-dentistry-section ul li {
+.family-dentistry-section ul li,
+.cosmetic-dentistry-section ul li,
+.orthodontic-dentistry-section ul li,
+.dental-implant-section ul li,
+.sleep-apnea-section ul li,
+.dental-fillings-section ul li,
+.root-canal-section ul li,
+.dental-exam-cleaning-section ul li,
+.teeth-whitening-section ul li,
+.dental-crowns-section ul li,
+.general-dentistry-section ul li{
     margin-bottom: 0.5rem;
 }
 
-.family-dentistry-section strong {
+.family-dentistry-section strong,
+.cosmetic-dentistry-section strong,
+.orthodontic-dentistry-section strong,
+.dental-implant-section strong,
+.sleep-apnea-section strong,
+.dental-fillings-section strong,
+.root-canal-section strong,
+.dental-exam-cleaning-section strong,
+.teeth-whitening-section strong,
+.dental-crowns-section strong,
+.general-dentistry-section strong {
     color: #007bff;
+}
+@media screen and (max-width:1200px){
+    .family-dentistry-section .container,
+    .cosmetic-dentistry-section .container,
+    .orthodontic-dentistry-section .container,
+    .dental-implant-section .container,
+    .sleep-apnea-section .container,
+    .dental-fillings-section .container,
+    .root-canal-section .container,
+    .dental-exam-cleaning-section  .container,
+    .teeth-whitening-section  .container,
+    .dental-crowns-section  .container,
+    .general-dentistry-section  .container  {
+        width:60%;
+    }
+
+}
+a[href="tel:571-888-9686"] {
+    color: blue;
 }
 .service-list{
     width:30%;
@@ -1539,7 +1529,7 @@ a {
 .service-list .container{
     background-color: grey;
     margin: 0px auto;
-    margin-top:1rem;
+    margin-top:3rem;
 }
 .service-list .logo{
     width: fit-content;
@@ -1578,6 +1568,9 @@ a {
     font-size: 1rem;
     color: #333;
 }
+#fixedServiceList ul li:hover{
+    text-decoration: underline;
+}
 
 #fixedServiceList ul li:last-child {
     border-bottom: none;
@@ -1589,561 +1582,39 @@ a {
     transform: none !important;
     right: 20px;
 }
-.cosmetic-dentistry-section{
-    width:100%;
-}
-.cosmetic-dentistry-section .container{
-    width: 60%; 
-    padding-top:8rem;
-    margin-left: 1rem;   
-    margin-right: auto;
-}
-
-.cosmetic-dentistry-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.cosmetic-dentistry-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.cosmetic-dentistry-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.cosmetic-dentistry-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.cosmetic-dentistry-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.cosmetic-dentistry-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.cosmetic-dentistry-section strong {
-    color: #007bff;
-}
-.orthodontic-dentistry-section{
-    width:100%;
-}
-.orthodontic-dentistry-section .container{
-    width: 60%; 
-    padding-top:8rem;
-    margin-left: 1rem;   
-    margin-right: auto;
-}
-
-.orthodontic-dentistry-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.orthodontic-dentistry-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.orthodontic-dentistry-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.orthodontic-dentistry-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.orthodontic-dentistry-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.orthodontic-dentistry-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.orthodontic-dentistry-section strong {
-    color: #007bff;
-}
-.dental-implant-section {
-    width: 100%;
-}
-
-.dental-implant-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.dental-implant-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.dental-implant-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.dental-implant-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.dental-implant-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.dental-implant-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.dental-implant-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.dental-implant-section strong {
-    color: #007bff;
-}
-.sleep-apnea-section {
-    width: 100%;
-}
-
-.sleep-apnea-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.sleep-apnea-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.sleep-apnea-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.sleep-apnea-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.sleep-apnea-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.sleep-apnea-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.sleep-apnea-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.sleep-apnea-section strong {
-    color: #007bff;
-}
-.dental-fillings-section {
-    width: 100%;
-}
-
-.dental-fillings-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.dental-fillings-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.dental-fillings-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.dental-fillings-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.dental-fillings-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.dental-fillings-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.dental-fillings-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.dental-fillings-section strong {
-    color: #007bff;
-}
-.root-canal-section {
-    width: 100%;
-}
-
-.root-canal-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.root-canal-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.root-canal-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.root-canal-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.root-canal-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.root-canal-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.root-canal-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.root-canal-section strong {
-    color: #007bff;
-}
-.dental-exam-cleaning-section {
-    width: 100%;
-}
-
-.dental-exam-cleaning-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.dental-exam-cleaning-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.dental-exam-cleaning-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.dental-exam-cleaning-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.dental-exam-cleaning-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.dental-exam-cleaning-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.dental-exam-cleaning-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.dental-exam-cleaning-section strong {
-    color: #007bff;
-}
-.teeth-whitening-section {
-    width: 100%;
-}
-
-.teeth-whitening-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.teeth-whitening-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.teeth-whitening-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.teeth-whitening-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.teeth-whitening-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.teeth-whitening-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.teeth-whitening-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.teeth-whitening-section strong {
-    color: #007bff;
-}
-.dental-crowns-section {
-    width: 100%;
-}
-
-.dental-crowns-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.dental-crowns-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.dental-crowns-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.dental-crowns-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.dental-crowns-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.dental-crowns-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.dental-crowns-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.dental-crowns-section strong {
-    color: #007bff;
-}
-.general-dentistry-section {
-    width: 100%;
-}
-
-.general-dentistry-section .container {
-    width: 60%;
-    padding-top: 8rem;
-    margin-left: 1rem;
-    margin-right: auto;
-}
-
-.general-dentistry-section h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.general-dentistry-section h3 {
-    font-size: 1.8rem;
-    color: #34495e;
-    margin-top: 1.8rem;
-    margin-bottom: 0.8rem;
-}
-
-.general-dentistry-section h4 {
-    font-size: 1.3rem;
-    color: #555;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-.general-dentistry-section p {
-    margin-bottom: 1.2rem;
-    text-align: justify;
-}
-
-.general-dentistry-section ul {
-    list-style-type: disc;
-    padding-left: 25px;
-    margin-bottom: 1.5rem;
-}
-
-.general-dentistry-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.general-dentistry-section strong {
-    color: #007bff;
-}
-.special-offers-section{
-    position:relative;
+#fixedServiceList {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+
+.special-offers-section .container{
     display: flex;
     background-image: url('/assets/bluegradient.png');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height:400px;
+    min-height:500px;
     padding-top:5rem;
-}
-.special-offers-section .container {
-    position:relative;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1rem;
+    flex-direction: column;
+    gap:2rem;
 }
 .special-offers-section h1{
-    color:white;
-}
-.special-offers-section .container button{
-    margin-top:1rem;
-    padding:1rem 2rem;
-    background-color:#007bff ;
-    color:white;
+    font-size: 4rem;
+    color:white;}
+
+.special-offers-section button {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
     font-size: 1em;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.special-offers-section button:hover{
+    background-color: #0056b3;
 }
 
 h1{
@@ -2151,6 +1622,14 @@ h1{
     font-size: 2.2em;
 }
 h2{
+    color: #042f47;
+    font-size: 2.2em;
+}
+h3{
+    color: #042f47;
+    font-size: 2.2em;
+}
+h4{
     color: #042f47;
     font-size: 2.2em;
 }
@@ -2295,5 +1774,88 @@ h2{
     font-size: 3em;
 }
 .mission-statement h2{
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+.mission-statement p{
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    padding: 0.5rem;
+    line-height:150%;
+    font-size: larger;
+}
+.mission-statement li{
+    margin-bottom: 1.2rem;
+    text-align: justify;
+    padding-left: 1.5rem;
+    line-height:150%;
+    font-size: larger;
+}
+.reviews{
+    padding-top:10rem;
+    padding-bottom:10rem;
+}
+.reviews .container{
+    margin: 0px auto;
+    width:95%;
+}
+.review-list ul{
+    padding-top:1rem;
+}
+.reviews .review-list li{
+    padding: 1.5rem 1rem;
+    margin-bottom:2rem;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius:1%;
+    background-color: white;
+}
+.review-list .review-list-header{
+    display: flex;
+    gap:1rem;
     padding:1rem;
+}
+.review-list-header .namedate{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    padding-top:0.5rem;
+}
+.review-list-header .namedate .username{
+    font-weight: bold;
+}
+.review-list-header .namedate .date{
+    font-size:smaller;
+}
+.review-list li .pfp img{
+    width:4rem;
+    height:4rem;
+    border-radius: 50%;
+}
+.review-list li .message{
+    display: flex;
+    gap: 0.5rem;
+    padding-left:1rem;
+    line-height: 150%;
+}
+.review-list .stars{
+    display: flex;
+}
+button{
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+    &:hover{
+        background-color: #0056b3;
+    }
 }
