@@ -353,20 +353,20 @@ a {
                   line-height: normal;
                   font-size: clamp(2rem, 3.5vw, 3.125rem); 
                   color:#042f47;
-                  margin-bottom: 0.625rem; /* Adjusted from 10px */
+                  margin-bottom: 0.625rem; 
   
               }
           ul {
-              padding-left: 1.875rem; /* Adjusted from 30px */
+              padding-left: 1.875rem; 
               text-align:left;
               li::marker {
-                  transform: translate(0,0.625rem); /* Adjusted from 10px */
+                  transform: translate(0,0.625rem);
                font-size: 0.8rem;
                vertical-align: middle;
               }
           }
   
-      @media (max-width: 768px){ /* Adjusted from 992px */
+      @media (max-width: 768px){ 
               margin-left: auto;
               margin-right: auto;
               width: 85%;
@@ -384,7 +384,7 @@ a {
       width:100%;
       text-align: center;
       color:#ffffff;
-      background-image: url("/assets/here-to-help-bg.jpg");
+      background-image: url("assets/here-to-help-bg.jpg");
       background-size: cover;
       min-height: 25rem; 
       padding-bottom: 5rem;
@@ -445,7 +445,7 @@ a {
     justify-content: center;
       width: clamp(15rem, 20vw, 18.75rem); 
       padding: 0.5rem; 
-      background-image: url("/assets/bluegradient.png");
+      background-image: url("assets/bluegradient.png");
       background-size: cover;
       height: 9rem; 
       border-radius: 10%;
@@ -472,7 +472,7 @@ a {
     flex-direction: column;
     justify-content: center;
       width: clamp(15rem, 20vw, 20.625rem);
-      background-image: url("/assets/bluegradient.png");
+      background-image: url("assets/bluegradient.png");
       background-size: cover;
       height: 9rem; 
       padding-top: .25rem; 
@@ -585,16 +585,16 @@ a {
     margin-bottom: 12rem;
 }
 
-  .Family-Dentistry { background-image: url("/assets/dentalpatient1.jpg"); 
+  .Family-Dentistry { background-image: url("assets/dentalpatient1.jpg"); 
   background-position: center;
 }
-  .Cosmetic-Dentistry { background-image: url("/assets/dentalpatient2.jpg"); 
+  .Cosmetic-Dentistry { background-image: url("assets/dentalpatient2.jpg"); 
   background-position: center;
 }
-  .Orthodontics { background-image: url("/assets/dentalpatient3.jpeg"); 
+  .Orthodontics { background-image: url("assets/dentalpatient3.jpeg"); 
   background-position: center;
 }
-  .Dental-Implants { background-image: url("/assets/dentalpatient4.jpg"); 
+  .Dental-Implants { background-image: url("assets/dentalpatient4.jpg"); 
   background-position: center;
 }
   
@@ -1588,7 +1588,7 @@ a[href="tel:571-888-9686"] {
 
 .special-offers-section .container{
     display: flex;
-    background-image: url('/assets/bluegradient.png');
+    background-image: url('assets/bluegradient.png');
     background-size: cover;
     background-repeat: no-repeat;
     min-height:500px;
@@ -1722,7 +1722,7 @@ h4{
 }
 .new-patients .container{
     display: flex;
-    background-image: url('/assets/bluegradient.png');
+    background-image: url('assets/bluegradient.png');
     background-size: cover;
     background-repeat: no-repeat;
     min-height:500px;
